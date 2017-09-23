@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LFVisitorView" customModule="WeiBo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="cBN-ns-lnf">
+                    <rect key="frame" x="100" y="158.5" width="175" height="175"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_mask_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-Qr-cvo">
+                    <rect key="frame" x="100" y="158.5" width="175" height="175"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="a1G-dB-erV">
+                    <rect key="frame" x="140" y="201" width="94" height="90"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注一些人，看看有什么惊喜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8x-jE-D1i">
+                    <rect key="frame" x="88" y="333.5" width="200" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Ued-xL-YIq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHu-Ol-xbk">
+                    <rect key="frame" x="88" y="371.5" width="90" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="Qmi-VO-gEy"/>
+                        <constraint firstAttribute="width" constant="90" id="qWU-Hh-a8Q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="注册" backgroundImage="common_button_white_disable">
+                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="registorButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Yrm-Rh-MtS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-4w-gmY">
+                    <rect key="frame" x="198" y="371" width="90" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="fi4-xY-qIl"/>
+                        <constraint firstAttribute="height" constant="32" id="nHC-w7-foq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="登录" backgroundImage="common_button_white_disable">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="loginButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="aBh-Kj-YEn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rFM-Qr-cvo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2Nm-8s-cFf"/>
+                <constraint firstItem="a1G-dB-erV" firstAttribute="centerX" secondItem="rFM-Qr-cvo" secondAttribute="centerX" id="8Cn-Cb-H3T"/>
+                <constraint firstItem="a1G-dB-erV" firstAttribute="centerY" secondItem="rFM-Qr-cvo" secondAttribute="centerY" id="A90-eS-0Mn"/>
+                <constraint firstItem="wbf-4w-gmY" firstAttribute="width" secondItem="FHu-Ol-xbk" secondAttribute="width" id="Blq-RP-mmG"/>
+                <constraint firstItem="wbf-4w-gmY" firstAttribute="height" secondItem="FHu-Ol-xbk" secondAttribute="height" id="FMF-4N-Rh0"/>
+                <constraint firstItem="rFM-Qr-cvo" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="centerY" id="FYk-t2-kIS"/>
+                <constraint firstItem="cBN-ns-lnf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JrB-Lh-O3e"/>
+                <constraint firstItem="FHu-Ol-xbk" firstAttribute="leading" secondItem="d8x-jE-D1i" secondAttribute="leading" id="Ml2-pi-acK"/>
+                <constraint firstItem="d8x-jE-D1i" firstAttribute="top" secondItem="cBN-ns-lnf" secondAttribute="bottom" id="c0x-jM-BPN"/>
+                <constraint firstItem="wbf-4w-gmY" firstAttribute="centerY" secondItem="FHu-Ol-xbk" secondAttribute="centerY" id="dYL-no-YEh"/>
+                <constraint firstItem="cBN-ns-lnf" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eew-XI-N7S"/>
+                <constraint firstItem="FHu-Ol-xbk" firstAttribute="top" secondItem="d8x-jE-D1i" secondAttribute="bottom" constant="20" id="qDW-e7-dtX"/>
+                <constraint firstItem="d8x-jE-D1i" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yk5-05-vdc"/>
+                <constraint firstItem="wbf-4w-gmY" firstAttribute="trailing" secondItem="d8x-jE-D1i" secondAttribute="trailing" id="z9e-tg-v9q"/>
+            </constraints>
+            <connections>
+                <outlet property="iconView" destination="a1G-dB-erV" id="5dJ-Hj-Npv"/>
+                <outlet property="rotationView" destination="cBN-ns-lnf" id="Tpk-ly-m6h"/>
+                <outlet property="tipView" destination="d8x-jE-D1i" id="t8l-Os-89z"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="common_button_white_disable" width="11" height="9"/>
+        <image name="visitordiscover_feed_image_house" width="94" height="90"/>
+        <image name="visitordiscover_feed_image_smallicon" width="175" height="175"/>
+        <image name="visitordiscover_feed_mask_smallicon" width="175" height="175"/>
+    </resources>
+</document>
