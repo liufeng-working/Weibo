@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LFWelcomeViewController" customModule="WeiBo" customModuleProvider="target">
+            <connections>
+                <outlet property="iconView" destination="emS-FN-0js" id="Ro9-UX-qDU"/>
+                <outlet property="iconViewBottomConstraint" destination="hnF-Jd-j2V" id="0Em-3n-Xz8"/>
+                <outlet property="view" destination="iN0-l3-epB" id="YsP-hb-7Xp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="EaW-YP-RxE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="emS-FN-0js">
+                    <rect key="frame" x="115" y="240" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="F2p-KN-nzZ"/>
+                        <constraint firstAttribute="height" constant="90" id="OWM-XS-lBY"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
+                            <integer key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="self.layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ8-8t-WJK">
+                    <rect key="frame" x="129.5" y="350" width="61.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EaW-YP-RxE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Gl-5B-E7g"/>
+                <constraint firstItem="EaW-YP-RxE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Xa-nW-wWc"/>
+                <constraint firstItem="emS-FN-0js" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KtI-Qy-pye"/>
+                <constraint firstItem="DQ8-8t-WJK" firstAttribute="centerX" secondItem="emS-FN-0js" secondAttribute="centerX" id="ZER-WH-Ar5"/>
+                <constraint firstAttribute="trailing" secondItem="EaW-YP-RxE" secondAttribute="trailing" id="dOI-Z0-Wje"/>
+                <constraint firstAttribute="bottom" secondItem="EaW-YP-RxE" secondAttribute="bottom" id="fUq-GN-ZCE"/>
+                <constraint firstAttribute="bottom" secondItem="emS-FN-0js" secondAttribute="bottom" constant="150" id="hnF-Jd-j2V"/>
+                <constraint firstItem="DQ8-8t-WJK" firstAttribute="top" secondItem="emS-FN-0js" secondAttribute="bottom" constant="20" id="rDx-Tz-zC7"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+        <image name="avatar_default_big" width="85" height="85"/>
+    </resources>
+</document>

@@ -63,8 +63,8 @@ extension LFOAuthViewController {
         LFOAuthViewModel.loadAccessToken(code: code, success: { (oauth: LFOAuth) in
             
             //保存到本地
-            let oauthPath = lfDocumentPath.appending("/\(lf_weibo_oauthPath)")
-            NSKeyedArchiver.archiveRootObject(oauth, toFile: oauthPath)
+            NSKeyedArchiver.archiveRootObject(oauth, toFile: LFOAuthViewModel.shareOAuth.oauthPath)
+            LFOAuthViewModel.shareOAuth.oauth = oauth
             
             self.loadUserInfo(oauth: oauth)
         }) { (error: Error) in
@@ -76,11 +76,14 @@ extension LFOAuthViewController {
         LFOAuthViewModel.loaduserInfo(accessToken: oauth.access_token!, uid: oauth.uid!, success: { (user: LFUser) in
             
             //保存到本地
-            let userPath = lfDocumentPath.appending("/\(lf_weibo_userPath)")
-            NSKeyedArchiver.archiveRootObject(user, toFile: userPath)
+            NSKeyedArchiver.archiveRootObject(user, toFile: LFUserViewModel.shareUser.userPath)
+            LFUserViewModel.shareUser.user = user
             
             //退出认证页
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: {
+                //显示欢迎页
+                lfWindow.rootViewController = lfWelcomeVC
+            })
         }) { (error: Error) in
             
         }
@@ -119,6 +122,6 @@ extension LFOAuthViewController: UIWebViewDelegate {
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        SVProgressHUD.showError(withStatus: "加载失败，稍后重试")
+        SVProgressHUD.dismiss()
     }
 }

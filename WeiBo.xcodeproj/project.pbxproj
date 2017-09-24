@@ -34,6 +34,16 @@
 		03BF8F771F77E0DC00C4701A /* LFOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F721F77E0DC00C4701A /* LFOAuth.swift */; };
 		03BF8F791F77E10600C4701A /* LFOAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F781F77E10600C4701A /* LFOAuthViewModel.swift */; };
 		03BF8F7B1F77E18100C4701A /* LFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F7A1F77E18100C4701A /* LFOAuthViewController.swift */; };
+		03BF8F871F77ECBF00C4701A /* LFWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F861F77ECBF00C4701A /* LFWelcomeViewController.swift */; };
+		03BF8F891F77ECF800C4701A /* LFWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BF8F881F77ECF800C4701A /* LFWelcomeViewController.xib */; };
+		03BF8F8B1F77F16400C4701A /* LFUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F8A1F77F16400C4701A /* LFUserViewModel.swift */; };
+		03BF8F8D1F77F98900C4701A /* LFStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F8C1F77F98900C4701A /* LFStoryboard.swift */; };
+		03BF8F8F1F77FBC400C4701A /* LFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F8E1F77FBC400C4701A /* LFViewController.swift */; };
+		03BF8F911F78014B00C4701A /* LFHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F901F78014B00C4701A /* LFHomeViewModel.swift */; };
+		03BF8F931F78056A00C4701A /* LFStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F921F78056A00C4701A /* LFStatusModel.swift */; };
+		03BF8F951F7812EB00C4701A /* LFStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F941F7812EB00C4701A /* LFStatus.swift */; };
+		03BF8F981F78176300C4701A /* LFStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F961F78176300C4701A /* LFStatusCell.swift */; };
+		03BF8F991F78176300C4701A /* LFStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BF8F971F78176300C4701A /* LFStatusCell.xib */; };
 		03DE6A311F765B73009ED1A9 /* UIBarButtonItem + LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE6A2F1F765B73009ED1A9 /* UIBarButtonItem + LFExtension.swift */; };
 		03DE6A321F765B73009ED1A9 /* UIButton+LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE6A301F765B73009ED1A9 /* UIButton+LFExtension.swift */; };
 		03DE6A381F7662EA009ED1A9 /* LFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE6A341F7662EA009ED1A9 /* LFHomeViewController.swift */; };
@@ -75,6 +85,16 @@
 		03BF8F721F77E0DC00C4701A /* LFOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFOAuth.swift; sourceTree = "<group>"; };
 		03BF8F781F77E10600C4701A /* LFOAuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFOAuthViewModel.swift; sourceTree = "<group>"; };
 		03BF8F7A1F77E18100C4701A /* LFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFOAuthViewController.swift; sourceTree = "<group>"; };
+		03BF8F861F77ECBF00C4701A /* LFWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFWelcomeViewController.swift; sourceTree = "<group>"; };
+		03BF8F881F77ECF800C4701A /* LFWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFWelcomeViewController.xib; sourceTree = "<group>"; };
+		03BF8F8A1F77F16400C4701A /* LFUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFUserViewModel.swift; sourceTree = "<group>"; };
+		03BF8F8C1F77F98900C4701A /* LFStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStoryboard.swift; sourceTree = "<group>"; };
+		03BF8F8E1F77FBC400C4701A /* LFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFViewController.swift; sourceTree = "<group>"; };
+		03BF8F901F78014B00C4701A /* LFHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHomeViewModel.swift; sourceTree = "<group>"; };
+		03BF8F921F78056A00C4701A /* LFStatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatusModel.swift; sourceTree = "<group>"; };
+		03BF8F941F7812EB00C4701A /* LFStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatus.swift; sourceTree = "<group>"; };
+		03BF8F961F78176300C4701A /* LFStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatusCell.swift; sourceTree = "<group>"; };
+		03BF8F971F78176300C4701A /* LFStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFStatusCell.xib; sourceTree = "<group>"; };
 		03DE6A2F1F765B73009ED1A9 /* UIBarButtonItem + LFExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + LFExtension.swift"; sourceTree = "<group>"; };
 		03DE6A301F765B73009ED1A9 /* UIButton+LFExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+LFExtension.swift"; sourceTree = "<group>"; };
 		03DE6A341F7662EA009ED1A9 /* LFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHomeViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +138,8 @@
 				030F53611F76DD0C00D7AE4D /* LFPublic.swift */,
 				03BF8F5F1F7796A100C4701A /* LFURL.swift */,
 				03BF8F691F77B2C300C4701A /* LFSystem.swift */,
+				03BF8F8C1F77F98900C4701A /* LFStoryboard.swift */,
+				03BF8F8E1F77FBC400C4701A /* LFViewController.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -161,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				03BF8F621F7799E400C4701A /* LFUser.swift */,
+				03BF8F8A1F77F16400C4701A /* LFUserViewModel.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -215,6 +238,47 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		03BF8F7F1F77EC7F00C4701A /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				03BF8F801F77EC7F00C4701A /* Controller */,
+				03BF8F811F77EC7F00C4701A /* Model */,
+				03BF8F821F77EC7F00C4701A /* View */,
+				03BF8F831F77EC7F00C4701A /* ViewModel */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		03BF8F801F77EC7F00C4701A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03BF8F861F77ECBF00C4701A /* LFWelcomeViewController.swift */,
+				03BF8F881F77ECF800C4701A /* LFWelcomeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03BF8F811F77EC7F00C4701A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03BF8F821F77EC7F00C4701A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03BF8F831F77EC7F00C4701A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		03DE6A2E1F765B73009ED1A9 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +303,8 @@
 		03DE6A351F7662EA009ED1A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				03BF8F941F7812EB00C4701A /* LFStatus.swift */,
+				03BF8F921F78056A00C4701A /* LFStatusModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				03DE6A4D1F766357009ED1A9 /* LFTitleButton.swift */,
+				03BF8F961F78176300C4701A /* LFStatusCell.swift */,
+				03BF8F971F78176300C4701A /* LFStatusCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +322,7 @@
 		03DE6A371F7662EA009ED1A9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				03BF8F901F78014B00C4701A /* LFHomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -391,6 +460,7 @@
 				03F2A5DD1F697B1300CA7E63 /* Message */,
 				03F2A5DA1F697B1300CA7E63 /* Discover */,
 				03F2A5DE1F697B1300CA7E63 /* Profile */,
+				03BF8F7F1F77EC7F00C4701A /* Welcome */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -547,10 +617,12 @@
 			files = (
 				030F53341F768AC200D7AE4D /* LFPopoverViewController.xib in Resources */,
 				03BF8F6C1F77B4B900C4701A /* MainVCSettings.json in Resources */,
+				03BF8F891F77ECF800C4701A /* LFWelcomeViewController.xib in Resources */,
 				03A289C71F6AACBE004180FD /* Main.storyboard in Resources */,
 				03A289D01F6ABC29004180FD /* Home.storyboard in Resources */,
 				03A289D61F6ABC9D004180FD /* Profile.storyboard in Resources */,
 				03F2A5CD1F6976E100CA7E63 /* LaunchScreen.storyboard in Resources */,
+				03BF8F991F78176300C4701A /* LFStatusCell.xib in Resources */,
 				03A289D81F6ABEC1004180FD /* Null.storyboard in Resources */,
 				03A289D21F6ABC70004180FD /* Message.storyboard in Resources */,
 				03BF8F751F77E0DC00C4701A /* LFOAuthViewController.xib in Resources */,
@@ -628,6 +700,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BF8F6A1F77B2C300C4701A /* LFSystem.swift in Sources */,
+				03BF8F871F77ECBF00C4701A /* LFWelcomeViewController.swift in Sources */,
 				03F2A5D81F697B0800CA7E63 /* AppDelegate.swift in Sources */,
 				03BF8F631F7799E400C4701A /* LFUser.swift in Sources */,
 				030F53361F76920100D7AE4D /* LFPopoverPresentationController.swift in Sources */,
@@ -637,21 +710,28 @@
 				03BF8F5E1F77933300C4701A /* LFBaseViewModel.swift in Sources */,
 				030F53621F76DD0C00D7AE4D /* LFPublic.swift in Sources */,
 				03DE6A321F765B73009ED1A9 /* UIButton+LFExtension.swift in Sources */,
+				03BF8F911F78014B00C4701A /* LFHomeViewModel.swift in Sources */,
 				03DE6A311F765B73009ED1A9 /* UIBarButtonItem + LFExtension.swift in Sources */,
 				03A289E71F6AD173004180FD /* LFVisitorView.swift in Sources */,
+				03BF8F8F1F77FBC400C4701A /* LFViewController.swift in Sources */,
 				03A289E51F6AD158004180FD /* LFTabBarController.swift in Sources */,
 				03A289E41F6AD158004180FD /* LFNavigationController.swift in Sources */,
 				03BF8F5B1F77902400C4701A /* LFLog.swift in Sources */,
+				03BF8F8D1F77F98900C4701A /* LFStoryboard.swift in Sources */,
+				03BF8F981F78176300C4701A /* LFStatusCell.swift in Sources */,
 				03DE6A441F7662FB009ED1A9 /* LFDiscoverViewController.swift in Sources */,
+				03BF8F931F78056A00C4701A /* LFStatusModel.swift in Sources */,
 				03BF8F791F77E10600C4701A /* LFOAuthViewModel.swift in Sources */,
 				030F53331F768AC200D7AE4D /* LFPopoverViewController.swift in Sources */,
 				030F535B1F76D04B00D7AE4D /* LFHTTPManager.swift in Sources */,
 				03DE6A3E1F7662F3009ED1A9 /* LFMessageViewController.swift in Sources */,
+				03BF8F8B1F77F16400C4701A /* LFUserViewModel.swift in Sources */,
 				03BF8F771F77E0DC00C4701A /* LFOAuth.swift in Sources */,
 				03DE6A4A1F766303009ED1A9 /* LFProfileViewController.swift in Sources */,
 				03DE6A381F7662EA009ED1A9 /* LFHomeViewController.swift in Sources */,
 				03DE6A4E1F766357009ED1A9 /* LFTitleButton.swift in Sources */,
 				03BF8F601F7796A100C4701A /* LFURL.swift in Sources */,
+				03BF8F951F7812EB00C4701A /* LFStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

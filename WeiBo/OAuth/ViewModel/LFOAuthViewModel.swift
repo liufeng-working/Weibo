@@ -9,6 +9,33 @@
 import UIKit
 
 class LFOAuthViewModel: NSObject {
+    
+    public static let shareOAuth = LFOAuthViewModel()
+    
+    var oauth: LFOAuth?
+    
+    var oauthPath: String {
+        return lfDocumentPath.appending("/\(lf_weibo_oauthPath)")
+    }
+    
+    var isLogin: Bool {
+        if let oauth = self.oauth,
+            let expiresDate = oauth.expires_date,
+            expiresDate.compare(Date()) == ComparisonResult.orderedDescending {
+            return true
+        }
+        return false
+    }
+    
+    override init() {
+        super.init()
+        self.oauth = NSKeyedUnarchiver.unarchiveObject(withFile: oauthPath) as? LFOAuth
+    }
+}
+
+//MARK: - 请求
+extension LFOAuthViewModel {
+    
     static func loadAccessToken(code: String, success: ((_ oauth: LFOAuth) -> ())?, failure: ((_ error: Error) -> ())?) {
         
         let urlStr = weibo_accessToken
@@ -20,7 +47,7 @@ class LFOAuthViewModel: NSObject {
         
         LFHTTPManager.shareManager.POST(urlStr: urlStr, parameters: param, success: { (result: [String: Any]) in
             let oauth = LFOAuth(dict: result)
-            success?(oauth);
+            success?(oauth)
         }) { (error: Error) in
             failure?(error)
         }

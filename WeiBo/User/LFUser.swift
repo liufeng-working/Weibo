@@ -10,7 +10,7 @@ import UIKit
 
 class LFUser: NSObject, NSCoding {
     
-    //用户UID
+    // 用户UID
     var id: Int?
     
     //字符串型的用户UID

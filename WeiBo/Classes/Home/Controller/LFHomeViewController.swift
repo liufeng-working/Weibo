@@ -9,6 +9,8 @@
 import UIKit
 
 class LFHomeViewController: LFBaseViewController {
+    
+    lazy var statusMs = [LFStatusModel]()
 
     //MARK: - titleView
     lazy var titleView: LFTitleButton = {
@@ -29,13 +31,13 @@ class LFHomeViewController: LFBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.loadHomeTimeline()
     }
 }
 
 //MARK: - UI
 extension LFHomeViewController {
     override func setupNavigationBarCustom() {
-        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(imageNamed: "navigationbar_friendattention", highlightedImageNamed: "navigationbar_friendattention_highlighted")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(imageNamed: "navigationbar_pop", highlightedImageNamed: "navigationbar_pop_highlighted")
@@ -53,5 +55,32 @@ extension LFHomeViewController {
         let popoverVC = LFPopoverViewController()
         popoverVC.transitioningDelegate = self.popoverAnimation
         self.present(popoverVC, animated: true, completion: nil)
+    }
+}
+
+//MARK: - 请求数据
+extension LFHomeViewController {
+    func loadHomeTimeline() {
+        LFHomeViewModel.loadHomeTimeline(success: { (statusMs: [LFStatusModel]) in
+            self.statusMs = statusMs
+            self.tableView.reloadData()
+        }) { (error: Error) in
+            
+        }
+    }
+}
+
+//MARK: - UITableViewDelegate
+
+//MARK: - UITableViewDataSource
+extension LFHomeViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.statusMs.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = LFStatusCell.statusCell(tableView: tableView)
+        cell.textLabel?.text = self.statusMs[indexPath.row].created_at
+        return cell
     }
 }

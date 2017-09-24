@@ -1,5 +1,5 @@
 //
-//  LFBaseViewModel.swift
+//  LFStoryboard.swift
 //  WeiBo
 //
 //  Created by 刘丰 on 2017/9/24.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class LFBaseViewModel: NSObject {
-
-}
+//MARK: -
+let lfMainSB = "Main"
+    

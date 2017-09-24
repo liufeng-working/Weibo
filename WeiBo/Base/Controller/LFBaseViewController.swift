@@ -10,7 +10,7 @@ import UIKit
 
 class LFBaseViewController: UITableViewController {
     
-    var isLogin = LFBaseViewModel.baseViewModel.isLogin
+    var isLogin = LFOAuthViewModel.shareOAuth.isLogin
     lazy var visitorView: LFVisitorView = LFVisitorView.visitorView()
     
     override func loadView() {

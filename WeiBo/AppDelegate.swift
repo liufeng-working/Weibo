@@ -12,21 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-//    var oauth: LFOAuth?
-//    
-//    var user: LFUser?
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        self.setupAppearance()
+        
+        return true
+    }
+    
+    func setupAppearance() {
         
         //设置全局Tabbar颜色
         UITabBar.appearance().tintColor = UIColor.orange
         
         //设置全局navigationBar颜色
         UINavigationBar.appearance().tintColor = UIColor.orange
-        
-        return true
     }
 }
 
