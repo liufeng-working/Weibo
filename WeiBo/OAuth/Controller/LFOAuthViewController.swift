@@ -33,7 +33,7 @@ extension LFOAuthViewController {
     }
     
     func loadPage() {
-        let urlStr = "https://api.weibo.com/oauth2/authorize?client_id=\(weibo_oauth_appKey)&redirect_uri=\(weibo_oauth_redirectUrl)"
+        let urlStr = "\(weibo_oauth_authorize)?client_id=\(weibo_oauth_appKey)&redirect_uri=\(weibo_oauth_redirectUrl)"
         guard let url = URL(string: urlStr) else {
             return
         }
@@ -51,15 +51,63 @@ extension LFOAuthViewController {
     }
     
     func fill() {
-        let jsCode = "document.getElementById('userId').value='1483682940@qq.com';document.getElementById('passwd').value='A';"
+        let jsCode = "document.getElementById('userId').value='\(weibo_userName)';document.getElementById('passwd').value='\(weibo_password)';"
         self.webView.stringByEvaluatingJavaScript(from: jsCode)
+    }
+}
+
+//MARK: - 请求数据
+extension LFOAuthViewController {
+    func loadAccessToken(code: String) {
+        
+        LFOAuthViewModel.loadAccessToken(code: code, success: { (oauth: LFOAuth) in
+            
+            //保存到本地
+            let oauthPath = lfDocumentPath.appending("/\(lf_weibo_oauthPath)")
+            NSKeyedArchiver.archiveRootObject(oauth, toFile: oauthPath)
+            
+            self.loadUserInfo(oauth: oauth)
+        }) { (error: Error) in
+            
+        }
+    }
+    
+    func loadUserInfo(oauth: LFOAuth) {
+        LFOAuthViewModel.loaduserInfo(accessToken: oauth.access_token!, uid: oauth.uid!, success: { (user: LFUser) in
+            
+            //保存到本地
+            let userPath = lfDocumentPath.appending("/\(lf_weibo_userPath)")
+            NSKeyedArchiver.archiveRootObject(user, toFile: userPath)
+            
+            //退出认证页
+            self.dismiss(animated: true, completion: nil)
+        }) { (error: Error) in
+            
+        }
     }
 }
 
 //MARK: - UIWebViewDelegate
 extension LFOAuthViewController: UIWebViewDelegate {
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        return true
+        
+        guard let url = request.url else {
+            return true
+        }
+        
+        let urlStr = url.absoluteString
+        guard urlStr.contains("code=") else {
+            return true
+        }
+        
+        let strs = urlStr.components(separatedBy: "code=")
+        guard let code = strs.last else {
+            return true
+        }
+        
+        self.loadAccessToken(code: code)
+        
+        return false
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {

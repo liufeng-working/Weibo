@@ -43,8 +43,22 @@ extension LFPopoverAnimation: UIViewControllerAnimatedTransitioning {
         
         var presentedVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
         
-        guard let _ = presentedVC.presentedViewController else {
-            
+        if let _ = presentedVC.presentedViewController {
+            if (presentedVC.presentedViewController?.isBeingPresented)! {
+                let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to)!
+                
+                transitionContext.containerView.addSubview(presentedView)
+                
+                presentedView.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
+                presentedView.transform = CGAffineTransform(scaleX: 1.0, y: 0.0)
+                UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
+                    presentedView.transform = CGAffineTransform.identity
+                }) { (isFinished: Bool) -> () in
+                    transitionContext.completeTransition(isFinished)
+                    self.presentedCallback?()
+                }
+            }
+        }else {
             presentedVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
             if (presentedVC.presentedViewController?.isBeingDismissed)! {
                 let presentingView = transitionContext.view(forKey: UITransitionContextViewKey.from)!
@@ -57,22 +71,6 @@ extension LFPopoverAnimation: UIViewControllerAnimatedTransitioning {
                     transitionContext.completeTransition(isFinished)
                     self.dismissCallback?()
                 }
-            }
-            return
-        }
-        
-        if (presentedVC.presentedViewController?.isBeingPresented)! {
-            let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to)!
-            
-            transitionContext.containerView.addSubview(presentedView)
-            
-            presentedView.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
-            presentedView.transform = CGAffineTransform(scaleX: 1.0, y: 0.0)
-            UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
-                presentedView.transform = CGAffineTransform.identity
-            }) { (isFinished: Bool) -> () in
-                transitionContext.completeTransition(isFinished)
-                self.presentedCallback?()
             }
         }
     }
