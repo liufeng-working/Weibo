@@ -13,6 +13,7 @@
 		030F53381F769FCB00D7AE4D /* LFPopoverAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F53371F769FCB00D7AE4D /* LFPopoverAnimation.swift */; };
 		030F535B1F76D04B00D7AE4D /* LFHTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F535A1F76D04B00D7AE4D /* LFHTTPManager.swift */; };
 		030F53621F76DD0C00D7AE4D /* LFPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F53611F76DD0C00D7AE4D /* LFPublic.swift */; };
+		03534F951F79705100856E8E /* LFPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03534F941F79705100856E8E /* LFPicture.swift */; };
 		039700B31F79298F00B80CC6 /* Date+LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039700B21F79298F00B80CC6 /* Date+LFExtension.swift */; };
 		03A289C71F6AACBE004180FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A289C61F6AACBE004180FD /* Main.storyboard */; };
 		03A289D01F6ABC29004180FD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A289CF1F6ABC29004180FD /* Home.storyboard */; };
@@ -65,6 +66,7 @@
 		030F53371F769FCB00D7AE4D /* LFPopoverAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPopoverAnimation.swift; sourceTree = "<group>"; };
 		030F535A1F76D04B00D7AE4D /* LFHTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHTTPManager.swift; sourceTree = "<group>"; };
 		030F53611F76DD0C00D7AE4D /* LFPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPublic.swift; sourceTree = "<group>"; };
+		03534F941F79705100856E8E /* LFPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPicture.swift; sourceTree = "<group>"; };
 		039700B21F79298F00B80CC6 /* Date+LFExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+LFExtension.swift"; sourceTree = "<group>"; };
 		03A289C61F6AACBE004180FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		03A289CF1F6ABC29004180FD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		03BF8F641F77ABA200C4701A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				03534F941F79705100856E8E /* LFPicture.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				039700B31F79298F00B80CC6 /* Date+LFExtension.swift in Sources */,
 				03BF8F931F78056A00C4701A /* LFStatusModel.swift in Sources */,
 				03BF8F791F77E10600C4701A /* LFOAuthViewModel.swift in Sources */,
+				03534F951F79705100856E8E /* LFPicture.swift in Sources */,
 				030F53331F768AC200D7AE4D /* LFPopoverViewController.swift in Sources */,
 				030F535B1F76D04B00D7AE4D /* LFHTTPManager.swift in Sources */,
 				03DE6A3E1F7662F3009ED1A9 /* LFMessageViewController.swift in Sources */,

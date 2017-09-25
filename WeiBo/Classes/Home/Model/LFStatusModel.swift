@@ -20,17 +20,20 @@ class LFStatusModel: NSObject {
     }
     var created_at_str: String?
     
-    /// 微博信息内容
-    var text: String?
-    
     /// 微博ID
     var id: Int?
+    
+    /// 微博MID
+    var mid: Int?
     
     /// 字符串型的微博ID
     var idstr: String?
     
-    /// 微博MID
-    var mid: Int?
+    /// 微博信息内容
+    var text: String?
+    
+    /// 微博内容长度
+    var textLength: Int?
     
     /// 微博来源
     var source: String? {
@@ -47,6 +50,8 @@ class LFStatusModel: NSObject {
         }
     }
     var source_str: String?
+    
+    var pic_urls: [LFPicture]?
     
     /// 是否已收藏，true：是，false：否
     var favorited: Bool?
@@ -87,13 +92,28 @@ class LFStatusModel: NSObject {
     var retweeted_status: Any?
     
     /// 转发数
-    var reposts_count: Int?
+    var reposts_count: Int = 0 {
+        didSet {
+            
+        }
+    }
+    var reposts_str: String?
     
     /// 评论数
-    var comments_count: Int?
+    var comments_count: Int = 0 {
+        didSet {
+            
+        }
+    }
+    var comments_str: String?
     
     /// 表态数
-    var attitudes_count: Int?
+    var attitudes_count: Int = 0 {
+        didSet {
+            
+        }
+    }
+    var attitudes_str: String?
     
     /// 暂未支持
     var mlevel: Int?
@@ -115,6 +135,16 @@ class LFStatusModel: NSObject {
         /// 转成LFUser
         if let userDic = dict["user"] as? [String: Any] {
             self.user = LFUser(dict: userDic)
+        }
+        
+        /// 取出配图
+        if let picUrls = dict["pic_urls"] as? [[String: String]] {
+            var tempA = [LFPicture]()
+            for picUrlDic in picUrls {
+                let picM = LFPicture(dict: picUrlDic)
+                tempA.append(picM)
+            }
+            self.pic_urls = tempA
         }
     }
     

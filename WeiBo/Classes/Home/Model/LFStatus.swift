@@ -9,7 +9,7 @@
 import UIKit
 
 class LFStatus: NSObject {
-    
+
     /// 
     var statuses: [LFStatusModel]?
 

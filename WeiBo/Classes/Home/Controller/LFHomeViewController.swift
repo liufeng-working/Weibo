@@ -70,14 +70,7 @@ extension LFHomeViewController {
     }
 }
 
-//MARK: - UITableViewDelegate
-extension LFHomeViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-}
-
-//MARK: - UITableViewDataSource
+//MARK: - UITableViewDataSource, UITableViewDelegate
 extension LFHomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.statusMs.count
@@ -85,7 +78,19 @@ extension LFHomeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = LFStatusCell.statusCell(tableView: tableView)
-        cell.textLabel?.text = self.statusMs[indexPath.row].created_at_str
+        cell.statusM = self.statusMs[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }

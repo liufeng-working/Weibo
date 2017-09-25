@@ -10,7 +10,7 @@ import UIKit
 
 class LFOAuth: NSObject, NSCoding {
     /// 授权后的accessToken
-    var access_token: String?
+    var access_token: String? //2.00N7c9NG0FyNcT355b994e760tFcea
     
     /// 令牌过期时间
     var expires_in: TimeInterval = 0.0 {

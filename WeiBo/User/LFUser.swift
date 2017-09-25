@@ -101,19 +101,17 @@ class LFUser: NSObject, NSCoding {
     var verified: Bool?
     
     /// 认证类型 0:个人认证 2,3,5:企业认证 220:达人认证
-    var verified_type: Int? {
+    var verified_type: Int = -1 {
         didSet {
-            if let verified_type = self.verified_type {
-                switch verified_type {
-                case 0:
-                    self.verified_image = UIImage(named: "avatar_vip")
-                case 2, 3, 5:
-                    self.verified_image = UIImage(named: "avatar_enterprise_vip")
-                case 220:
-                    self.verified_image = UIImage(named: "avatar_grassroot")
-                default:
-                    self.verified_image = nil
-                }
+            switch verified_type {
+            case 0:
+                self.verified_image = UIImage(named: "avatar_vip")
+            case 2, 3, 5:
+                self.verified_image = UIImage(named: "avatar_enterprise_vip")
+            case 220:
+                self.verified_image = UIImage(named: "avatar_grassroot")
+            default:
+                self.verified_image = nil
             }
         }
     }
@@ -206,7 +204,7 @@ extension LFUser {
         aCoder.encode(self.province, forKey: "province")
         aCoder.encode(self.city, forKey: "city")
         aCoder.encode(self.location, forKey: "location")
-//        aCoder.encode(self.description, forKey: "description")
+        aCoder.encode(self.desc, forKey: "desc")
         aCoder.encode(self.url, forKey: "url")
         aCoder.encode(self.profile_image_url, forKey: "profile_image_url")
         aCoder.encode(self.profile_url, forKey: "profile_url")
@@ -243,7 +241,7 @@ extension LFUser {
         self.province = aDecoder.decodeObject(forKey: "province") as? Int
         self.city = aDecoder.decodeObject(forKey: "city") as? Int
         self.location = aDecoder.decodeObject(forKey: "location") as? String
-//        self.description = aDecoder.decodeObject(forKey: "description") as? String
+        self.desc = aDecoder.decodeObject(forKey: "desc") as? String
         self.url = aDecoder.decodeObject(forKey: "url") as? String
         self.profile_image_url = aDecoder.decodeObject(forKey: "profile_image_url") as? String
         self.profile_url = aDecoder.decodeObject(forKey: "profile_url") as? String
@@ -259,7 +257,7 @@ extension LFUser {
         self.allow_all_act_msg = aDecoder.decodeObject(forKey: "allow_all_act_msg") as? Bool
         self.geo_enabled = aDecoder.decodeObject(forKey: "geo_enabled") as? Bool
         self.verified = aDecoder.decodeObject(forKey: "verified") as? Bool
-        self.verified_type = aDecoder.decodeObject(forKey: "verified_type") as? Int
+        self.verified_type = aDecoder.decodeObject(forKey: "verified_type") as! Int
         self.remark = aDecoder.decodeObject(forKey: "remark") as? String
         self.status = aDecoder.decodeObject(forKey: "status")
         self.allow_all_comment = aDecoder.decodeObject(forKey: "allow_all_comment") as? Bool

@@ -15,7 +15,7 @@ extension Date {
         dateFormatter.locale = Locale(identifier: "en")
         
         var timeStr = ""
-        if let createAtDate = dateFormatter.date(from: originStr) {
+        if let createAtDate = dateFormatter.date(from: originString) {
             let interval = -createAtDate.timeIntervalSinceNow
             if interval < 0 {
                 timeStr = "穿越了"
