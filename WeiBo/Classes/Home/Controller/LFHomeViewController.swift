@@ -71,6 +71,11 @@ extension LFHomeViewController {
 }
 
 //MARK: - UITableViewDelegate
+extension LFHomeViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
 
 //MARK: - UITableViewDataSource
 extension LFHomeViewController {
@@ -80,7 +85,7 @@ extension LFHomeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = LFStatusCell.statusCell(tableView: tableView)
-        cell.textLabel?.text = self.statusMs[indexPath.row].created_at
+        cell.textLabel?.text = self.statusMs[indexPath.row].created_at_str
         return cell
     }
 }

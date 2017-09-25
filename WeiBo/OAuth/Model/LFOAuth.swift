@@ -9,10 +9,10 @@
 import UIKit
 
 class LFOAuth: NSObject, NSCoding {
-    //授权后的accessToken
+    /// 授权后的accessToken
     var access_token: String?
     
-    //令牌过期时间
+    /// 令牌过期时间
     var expires_in: TimeInterval = 0.0 {
         didSet {
             self.expires_date = Date(timeIntervalSinceNow: self.expires_in)
@@ -20,10 +20,10 @@ class LFOAuth: NSObject, NSCoding {
     }
     var expires_date: Date?
     
-    //用户id
+    /// 用户id
     var uid: String?
     
-    //是否实名
+    /// 是否实名
     var isRealName: Bool?
     
     init(dict: [String: Any]) {
@@ -36,7 +36,7 @@ class LFOAuth: NSObject, NSCoding {
         
     }
     
-    //归档、解档
+    /// 归档、解档
     func encode(with aCoder: NSCoder) {
         self.encoder(with: aCoder)
     }

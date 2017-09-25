@@ -13,6 +13,7 @@
 		030F53381F769FCB00D7AE4D /* LFPopoverAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F53371F769FCB00D7AE4D /* LFPopoverAnimation.swift */; };
 		030F535B1F76D04B00D7AE4D /* LFHTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F535A1F76D04B00D7AE4D /* LFHTTPManager.swift */; };
 		030F53621F76DD0C00D7AE4D /* LFPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F53611F76DD0C00D7AE4D /* LFPublic.swift */; };
+		039700B31F79298F00B80CC6 /* Date+LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039700B21F79298F00B80CC6 /* Date+LFExtension.swift */; };
 		03A289C71F6AACBE004180FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A289C61F6AACBE004180FD /* Main.storyboard */; };
 		03A289D01F6ABC29004180FD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A289CF1F6ABC29004180FD /* Home.storyboard */; };
 		03A289D21F6ABC70004180FD /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A289D11F6ABC70004180FD /* Message.storyboard */; };
@@ -64,6 +65,7 @@
 		030F53371F769FCB00D7AE4D /* LFPopoverAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPopoverAnimation.swift; sourceTree = "<group>"; };
 		030F535A1F76D04B00D7AE4D /* LFHTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHTTPManager.swift; sourceTree = "<group>"; };
 		030F53611F76DD0C00D7AE4D /* LFPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPublic.swift; sourceTree = "<group>"; };
+		039700B21F79298F00B80CC6 /* Date+LFExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+LFExtension.swift"; sourceTree = "<group>"; };
 		03A289C61F6AACBE004180FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		03A289CF1F6ABC29004180FD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		03A289D11F6ABC70004180FD /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				03DE6A2F1F765B73009ED1A9 /* UIBarButtonItem + LFExtension.swift */,
 				03DE6A301F765B73009ED1A9 /* UIButton+LFExtension.swift */,
+				039700B21F79298F00B80CC6 /* Date+LFExtension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -440,8 +443,8 @@
 				03BF8F6B1F77B4B900C4701A /* MainVCSettings.json */,
 				03BF8F611F77996300C4701A /* User */,
 				03F2A5D91F697B1300CA7E63 /* Classes */,
-				03F2A5E21F697D6C00CA7E63 /* Base */,
 				03BF8F6D1F77E09B00C4701A /* OAuth */,
+				03F2A5E21F697D6C00CA7E63 /* Base */,
 				030F53591F76D03D00D7AE4D /* Tools */,
 				03DE6A2E1F765B73009ED1A9 /* Category */,
 				030F53601F76DCFC00D7AE4D /* Const */,
@@ -720,6 +723,7 @@
 				03BF8F8D1F77F98900C4701A /* LFStoryboard.swift in Sources */,
 				03BF8F981F78176300C4701A /* LFStatusCell.swift in Sources */,
 				03DE6A441F7662FB009ED1A9 /* LFDiscoverViewController.swift in Sources */,
+				039700B31F79298F00B80CC6 /* Date+LFExtension.swift in Sources */,
 				03BF8F931F78056A00C4701A /* LFStatusModel.swift in Sources */,
 				03BF8F791F77E10600C4701A /* LFOAuthViewModel.swift in Sources */,
 				030F53331F768AC200D7AE4D /* LFPopoverViewController.swift in Sources */,

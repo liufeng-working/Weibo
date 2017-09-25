@@ -18,7 +18,7 @@ class LFWelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.iconView.sd_setImage(with: URL(string: LFUserViewModel.shareUser.user?.avatar_large ?? ""), placeholderImage: UIImage(named: "avatar_default_big"), options: SDWebImageOptions.retryFailed)
+        self.iconView.sd_setImage(with: LFUserViewModel.shareUser.user?.avatar_large_url, placeholderImage: UIImage(named: "avatar_default_big"), options: SDWebImageOptions.retryFailed)
     }
     
     override func viewDidAppear(_ animated: Bool) {

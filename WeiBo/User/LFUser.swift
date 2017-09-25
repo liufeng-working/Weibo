@@ -10,119 +10,182 @@ import UIKit
 
 class LFUser: NSObject, NSCoding {
     
-    // 用户UID
+    /// 用户UID
     var id: Int?
     
-    //字符串型的用户UID
+    /// 字符串型的用户UID
     var idstr: String?
     
-    //用户昵称
+    /// 用户昵称
     var screen_name: String?
     
-    //友好显示名称
+    /// 友好显示名称
     var name: String?
     
-    //用户所在省级ID
+    /// 用户所在省级ID
     var province: Int?
     
-    //用户所在城市ID
+    /// 用户所在城市ID
     var city: Int?
     
-    //用户所在地
+    /// 用户所在地
     var location: String?
     
-    //用户个人描述
-//    var description: String?
+    /// 用户个人描述
+    var desc: String?
     
-    //用户博客地址
-    var url: String?
+    /// 用户博客地址
+    var url: String? {
+        didSet {
+            if let url = self.url {
+                self.user_url = URL(string: url)
+            }
+        }
+    }
+    var user_url: URL?
     
-    //用户头像地址（中图），50×50像素
-    var profile_image_url: String?
+    /// 用户头像地址（中图），50×50像素
+    var profile_image_url: String? {
+        didSet {
+            if let profile_image_url = self.profile_image_url {
+                self.profile_image_url_url = URL(string: profile_image_url)
+            }
+        }
+    }
+    var profile_image_url_url: URL?
     
-    //用户的微博统一URL地址
-    var profile_url: String?
+    /// 用户的微博统一URL地址
+    var profile_url: String? {
+        didSet {
+            if let profile_url = self.profile_url {
+                self.profile_url_url = URL(string: profile_url)
+            }
+        }
+    }
+    var profile_url_url: URL?
     
-    //用户的个性化域名
+    /// 用户的个性化域名
     var domain: String?
     
-    //用户的微号
+    /// 用户的微号
     var weihao: String?
     
-    //性别，m：男、f：女、n：未知
+    /// 性别，m：男、f：女、n：未知
     var gender: String?
     
-    //粉丝数
+    /// 粉丝数
     var followers_count: Int?
     
-    //关注数
+    /// 关注数
     var friends_count: Int?
     
-    //微博数
+    /// 微博数
     var statuses_count: Int?
     
-    //收藏数
+    /// 收藏数
     var favourites_count: Int?
     
-    //用户创建（注册）时间
+    /// 用户创建（注册）时间
     var created_at: String?
     
-    //暂未支持
+    /// 暂未支持
     var following: Bool?
     
-    //是否允许所有人给我发私信，true：是，false：否
+    /// 是否允许所有人给我发私信，true：是，false：否
     var allow_all_act_msg: Bool?
     
-    //是否允许标识用户的地理位置，true：是，false：否
+    /// 是否允许标识用户的地理位置，true：是，false：否
     var geo_enabled: Bool?
     
-    //是否是微博认证用户，即加V用户，true：是，false：否
+    /// 是否是微博认证用户，即加V用户，true：是，false：否
     var verified: Bool?
     
-    //暂未支持
-    var verified_type: Int?
+    /// 认证类型 0:个人认证 2,3,5:企业认证 220:达人认证
+    var verified_type: Int? {
+        didSet {
+            if let verified_type = self.verified_type {
+                switch verified_type {
+                case 0:
+                    self.verified_image = UIImage(named: "avatar_vip")
+                case 2, 3, 5:
+                    self.verified_image = UIImage(named: "avatar_enterprise_vip")
+                case 220:
+                    self.verified_image = UIImage(named: "avatar_grassroot")
+                default:
+                    self.verified_image = nil
+                }
+            }
+        }
+    }
+    var verified_image: UIImage?
     
-    //用户备注信息，只有在查询用户关系时才返回此字段
+    /// 用户备注信息，只有在查询用户关系时才返回此字段
     var remark: String?
     
-    //用户的最近一条微博信息字段 详细
+    /// 用户的最近一条微博信息字段 详细
     var status: Any?
     
-    //是否允许所有人对我的微博进行评论，true：是，false：否
+    /// 是否允许所有人对我的微博进行评论，true：是，false：否
     var allow_all_comment: Bool?
     
-    //用户头像地址（大图），180×180像素
-    var avatar_large: String?
+    /// 用户头像地址（大图），180×180像素
+    var avatar_large: String? {
+        didSet {
+            if let avatar_large = self.avatar_large {
+                self.avatar_large_url = URL(string: avatar_large)
+            }
+        }
+    }
+    var avatar_large_url: URL?
     
-    //用户头像地址（高清），高清头像原图
-    var avatar_hd: String?
+    /// 用户头像地址（高清），高清头像原图
+    var avatar_hd: String? {
+        didSet {
+            if let avatar_hd = self.avatar_hd {
+                self.avatar_hd_url = URL(string: avatar_hd)
+            }
+        }
+    }
+    var avatar_hd_url: URL?
     
-    //认证原因
+    /// 认证原因
     var verified_reason: String?
     
-    //该用户是否关注当前登录用户，true：是，false：否
+    /// 该用户是否关注当前登录用户，true：是，false：否
     var follow_me: Bool?
     
-    //用户的在线状态，0：不在线、1：在线
+    /// 用户的在线状态，0：不在线、1：在线
     var online_status: Int?
     
-    //用户的互粉数
+    /// 用户的互粉数
     var bi_followers_count: Int?
     
-    //用户当前的语言版本，zh-cn：简体中文，zh-tw：繁体中文，en：英语
+    /// 用户当前的语言版本，zh-cn：简体中文，zh-tw：繁体中文，en：英语
     var lang: String?
     
+    /// 会员等级
+    var mbrank: Int = 0 {
+        didSet {
+            if self.mbrank > 0 && self.mbrank <= 6 {
+                self.mbrank_image = UIImage(named: "common_icon_membership_level\(self.mbrank)")
+            }
+        }
+    }
+    var mbrank_image: UIImage?
+
     init(dict: [String: Any]) {
         super.init()
         
         self.setValuesForKeys(dict)
+        
+        self.desc = dict["description"] as? String
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         
     }
     
-    //归档、解档
+    /// 归档、解档
     func encode(with aCoder: NSCoder) {
         self.encoder(with: aCoder)
     }
