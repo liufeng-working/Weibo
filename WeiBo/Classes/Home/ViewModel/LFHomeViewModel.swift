@@ -17,8 +17,11 @@ extension LFHomeViewModel {
     
     static func loadHomeTimeline(success: ((_ statusMs: [LFStatusModel]) -> ())?, failure: ((_ error: Error) -> ())?) {
         
+        guard let access_token = LFOAuthViewModel.shareOAuth.oauth?.access_token else {
+            return
+        }
         let urlStr = weibo_home_timeline
-        let param = ["access_token": (LFOAuthViewModel.shareOAuth.oauth?.access_token)!]
+        let param = ["access_token": access_token]
         LFHTTPManager.shareManager.GET(urlStr: urlStr, parameters: param, success: { (result: [String: Any]) in
             var temArr = [LFStatusModel]()
             for statusDic in result["statuses"] as! [[String: Any]] {

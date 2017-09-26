@@ -53,6 +53,10 @@
 		03DE6A441F7662FB009ED1A9 /* LFDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE6A401F7662FB009ED1A9 /* LFDiscoverViewController.swift */; };
 		03DE6A4A1F766303009ED1A9 /* LFProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE6A461F766303009ED1A9 /* LFProfileViewController.swift */; };
 		03DE6A4E1F766357009ED1A9 /* LFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE6A4D1F766357009ED1A9 /* LFTitleButton.swift */; };
+		03EF8B641F7A8E3900DFB5A0 /* LFPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF8B631F7A8E3900DFB5A0 /* LFPictureView.swift */; };
+		03EF8B671F7A8FD200DFB5A0 /* LFPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF8B651F7A8FD200DFB5A0 /* LFPictureCell.swift */; };
+		03EF8B681F7A8FD200DFB5A0 /* LFPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EF8B661F7A8FD200DFB5A0 /* LFPictureCell.xib */; };
+		03EF8B6A1F7AD0C600DFB5A0 /* LFFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF8B691F7AD0C600DFB5A0 /* LFFit.swift */; };
 		03F2A5CA1F6976E100CA7E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F2A5C91F6976E100CA7E63 /* Assets.xcassets */; };
 		03F2A5CD1F6976E100CA7E63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2A5CB1F6976E100CA7E63 /* LaunchScreen.storyboard */; };
 		03F2A5D81F697B0800CA7E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2A5D71F697B0800CA7E63 /* AppDelegate.swift */; };
@@ -106,6 +110,10 @@
 		03DE6A401F7662FB009ED1A9 /* LFDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDiscoverViewController.swift; sourceTree = "<group>"; };
 		03DE6A461F766303009ED1A9 /* LFProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFProfileViewController.swift; sourceTree = "<group>"; };
 		03DE6A4D1F766357009ED1A9 /* LFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTitleButton.swift; sourceTree = "<group>"; };
+		03EF8B631F7A8E3900DFB5A0 /* LFPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPictureView.swift; sourceTree = "<group>"; };
+		03EF8B651F7A8FD200DFB5A0 /* LFPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPictureCell.swift; sourceTree = "<group>"; };
+		03EF8B661F7A8FD200DFB5A0 /* LFPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFPictureCell.xib; sourceTree = "<group>"; };
+		03EF8B691F7AD0C600DFB5A0 /* LFFit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFFit.swift; sourceTree = "<group>"; };
 		03F2A5BF1F6976E100CA7E63 /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F2A5C91F6976E100CA7E63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03F2A5CC1F6976E100CA7E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				030F535A1F76D04B00D7AE4D /* LFHTTPManager.swift */,
+				03EF8B691F7AD0C600DFB5A0 /* LFFit.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -300,8 +309,8 @@
 				03DE6A341F7662EA009ED1A9 /* LFHomeViewController.swift */,
 				030F53311F768AC200D7AE4D /* LFPopoverViewController.swift */,
 				030F53321F768AC200D7AE4D /* LFPopoverViewController.xib */,
-				030F53351F76920100D7AE4D /* LFPopoverPresentationController.swift */,
 				030F53371F769FCB00D7AE4D /* LFPopoverAnimation.swift */,
+				030F53351F76920100D7AE4D /* LFPopoverPresentationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +330,9 @@
 				03DE6A4D1F766357009ED1A9 /* LFTitleButton.swift */,
 				03BF8F961F78176300C4701A /* LFStatusCell.swift */,
 				03BF8F971F78176300C4701A /* LFStatusCell.xib */,
+				03EF8B631F7A8E3900DFB5A0 /* LFPictureView.swift */,
+				03EF8B651F7A8FD200DFB5A0 /* LFPictureCell.swift */,
+				03EF8B661F7A8FD200DFB5A0 /* LFPictureCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -627,6 +639,7 @@
 				03A289C71F6AACBE004180FD /* Main.storyboard in Resources */,
 				03A289D01F6ABC29004180FD /* Home.storyboard in Resources */,
 				03A289D61F6ABC9D004180FD /* Profile.storyboard in Resources */,
+				03EF8B681F7A8FD200DFB5A0 /* LFPictureCell.xib in Resources */,
 				03F2A5CD1F6976E100CA7E63 /* LaunchScreen.storyboard in Resources */,
 				03BF8F991F78176300C4701A /* LFStatusCell.xib in Resources */,
 				03A289D81F6ABEC1004180FD /* Null.storyboard in Resources */,
@@ -710,6 +723,7 @@
 				03F2A5D81F697B0800CA7E63 /* AppDelegate.swift in Sources */,
 				03BF8F631F7799E400C4701A /* LFUser.swift in Sources */,
 				030F53361F76920100D7AE4D /* LFPopoverPresentationController.swift in Sources */,
+				03EF8B6A1F7AD0C600DFB5A0 /* LFFit.swift in Sources */,
 				03A289E31F6AD158004180FD /* LFBaseViewController.swift in Sources */,
 				03BF8F7B1F77E18100C4701A /* LFOAuthViewController.swift in Sources */,
 				030F53381F769FCB00D7AE4D /* LFPopoverAnimation.swift in Sources */,
@@ -740,6 +754,8 @@
 				03DE6A4E1F766357009ED1A9 /* LFTitleButton.swift in Sources */,
 				03BF8F601F7796A100C4701A /* LFURL.swift in Sources */,
 				03BF8F951F7812EB00C4701A /* LFStatus.swift in Sources */,
+				03EF8B671F7A8FD200DFB5A0 /* LFPictureCell.swift in Sources */,
+				03EF8B641F7A8E3900DFB5A0 /* LFPictureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //  用户发布的每条微博模型
 
 import UIKit
+import SDWebImage
 
 class LFStatusModel: NSObject {
 
@@ -50,8 +51,13 @@ class LFStatusModel: NSObject {
         }
     }
     var source_str: String?
-    
-    var pic_urls: [LFPicture]?
+
+    /// 配图
+    var pic_urls: [LFPicture] = [] {
+        didSet {
+            
+        }
+    }
     
     /// 是否已收藏，true：是，false：否
     var favorited: Bool?
@@ -89,12 +95,25 @@ class LFStatusModel: NSObject {
     var user: LFUser?
     
     /// 被转发的原微博信息字段，当该微博为转发微博时返回 详细
-    var retweeted_status: Any?
+    var retweeted_status: LFStatusModel? {
+        didSet {
+            if let _ = self.retweeted_status {
+                self.hasRetweet = true
+            }
+        }
+    }
+    var hasRetweet: Bool = false //有转发
     
     /// 转发数
     var reposts_count: Int = 0 {
         didSet {
-            
+            if self.reposts_count == 0 {
+                self.reposts_str = "转发"
+            }else if self.reposts_count < 1_0000 {
+                self.reposts_str = "\(self.reposts_count)"
+            }else {
+                self.reposts_str = "\(self.reposts_count/1_0000)万"
+            }
         }
     }
     var reposts_str: String?
@@ -102,7 +121,13 @@ class LFStatusModel: NSObject {
     /// 评论数
     var comments_count: Int = 0 {
         didSet {
-            
+            if self.comments_count == 0 {
+                self.comments_str = "评论"
+            }else if self.comments_count < 1_0000 {
+                self.comments_str = "\(self.comments_count)"
+            }else {
+                self.comments_str = "\(self.comments_count/1_0000)万"
+            }
         }
     }
     var comments_str: String?
@@ -110,7 +135,13 @@ class LFStatusModel: NSObject {
     /// 表态数
     var attitudes_count: Int = 0 {
         didSet {
-            
+            if self.attitudes_count == 0 {
+                self.attitudes_str = "赞"
+            }else if self.attitudes_count < 1_0000 {
+                self.attitudes_str = "\(self.attitudes_count)"
+            }else {
+                self.attitudes_str = "\(self.attitudes_count/1_0000)万"
+            }
         }
     }
     var attitudes_str: String?
@@ -138,6 +169,21 @@ class LFStatusModel: NSObject {
         }
         
         /// 取出配图
+        self.setupPics(dict: dict)
+        
+        /// 转发的微博
+        if let retweetDic = dict["retweeted_status"] as? [String: Any] {
+            self.retweeted_status = LFStatusModel(dict: retweetDic)
+            self.setupPics(dict: retweetDic)
+        }
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        
+    }
+    
+    //处理配图
+    private func setupPics(dict: [String: Any]) {
         if let picUrls = dict["pic_urls"] as? [[String: String]] {
             var tempA = [LFPicture]()
             for picUrlDic in picUrls {
@@ -146,9 +192,5 @@ class LFStatusModel: NSObject {
             }
             self.pic_urls = tempA
         }
-    }
-    
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        
     }
 }

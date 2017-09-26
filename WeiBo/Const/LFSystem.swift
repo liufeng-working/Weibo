@@ -14,6 +14,10 @@ let lfApp = UIApplication.shared.delegate as! AppDelegate
 //MARK: - 主窗口
 let lfWindow = lfApp.window!
 
+//MARK: - 屏幕宽高
+let lfScreenWidth = (UIScreen.main.bounds.width)
+let lfScreenHeight = (UIScreen.main.bounds.height)
+
 //MARK: - 沙盒路径
 let lfHomePath = NSHomeDirectory()
 let lfDocumentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!

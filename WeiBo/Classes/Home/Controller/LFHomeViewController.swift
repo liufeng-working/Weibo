@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class LFHomeViewController: LFBaseViewController {
     
@@ -63,7 +64,22 @@ extension LFHomeViewController {
     func loadHomeTimeline() {
         LFHomeViewModel.loadHomeTimeline(success: { (statusMs: [LFStatusModel]) in
             self.statusMs = statusMs
-            self.tableView.reloadData()
+            
+            //缓存只有一张配图的图片
+            let group = DispatchGroup()
+            for statusM in statusMs {
+                if statusM.pic_urls.count == 1 {
+                    group.enter()
+                    SDWebImageManager.shared().loadImage(with: statusM.pic_urls.first?.bmiddle_pic_url, options: SDWebImageOptions.retryFailed, progress: nil, completed: { (_, _, _, _, _, _) in
+                        group.leave()
+                    })
+                }
+            }
+            
+            //刷新表格
+            group.notify(queue: DispatchQueue.main, execute: {
+                self.tableView.reloadData()
+            })
         }) { (error: Error) in
             
         }
