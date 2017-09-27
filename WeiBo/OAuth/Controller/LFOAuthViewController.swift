@@ -17,13 +17,13 @@ class LFOAuthViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupNavigationBarCustom()
-        self.loadPage()
+        self.loadWebPage()
     }
 }
 
 //MARK: - UI
 extension LFOAuthViewController {
-    func setupNavigationBarCustom() {
+    fileprivate  func setupNavigationBarCustom() {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: UIBarButtonItemStyle.plain, target: self, action: #selector(close))
         
@@ -32,7 +32,7 @@ extension LFOAuthViewController {
         self.navigationItem.title = "授权"
     }
     
-    func loadPage() {
+    fileprivate func loadWebPage() {
         let urlStr = "\(weibo_oauth_authorize)?client_id=\(weibo_oauth_appKey)&redirect_uri=\(weibo_oauth_redirectUrl)"
         guard let url = URL(string: urlStr) else {
             return
@@ -46,11 +46,11 @@ extension LFOAuthViewController {
 
 //MARK: - 事件监听
 extension LFOAuthViewController {
-    func close() {
+    @objc fileprivate func close() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func fill() {
+    @objc fileprivate func fill() {
         let jsCode = "document.getElementById('userId').value='\(weibo_userName)';document.getElementById('passwd').value='\(weibo_password)';"
         self.webView.stringByEvaluatingJavaScript(from: jsCode)
     }
@@ -58,7 +58,7 @@ extension LFOAuthViewController {
 
 //MARK: - 请求数据
 extension LFOAuthViewController {
-    func loadAccessToken(code: String) {
+    fileprivate func loadAccessToken(code: String) {
         
         LFOAuthViewModel.loadAccessToken(code: code, success: { (oauth: LFOAuth) in
             
@@ -72,7 +72,7 @@ extension LFOAuthViewController {
         }
     }
     
-    func loadUserInfo(oauth: LFOAuth) {
+    fileprivate func loadUserInfo(oauth: LFOAuth) {
         LFOAuthViewModel.loaduserInfo(accessToken: oauth.access_token!, uid: oauth.uid!, success: { (user: LFUser) in
             
             //保存到本地

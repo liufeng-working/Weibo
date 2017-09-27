@@ -11,9 +11,9 @@ import UIKit
 class LFVisitorView: UIView {
     
     //MARK: - 控件的属性
-    @IBOutlet weak var rotationView: UIImageView!
-    @IBOutlet weak var iconView: UIImageView!
-    @IBOutlet weak var tipView: UILabel!
+    @IBOutlet private weak var rotationView: UIImageView!
+    @IBOutlet private weak var iconView: UIImageView!
+    @IBOutlet private weak var tipView: UILabel!
 
     weak var delegate: LFVisitorViewDelegate?
 
@@ -45,11 +45,11 @@ class LFVisitorView: UIView {
     }
     
     //MARK: - 登录注册点击事件
-    @IBAction func registorButtonClick(_ sender: UIButton) {
+    @IBAction private func registorButtonClick(_ sender: UIButton) {
         self.delegate?.registorClick(visitorView: self)
     }
     
-    @IBAction func loginButtonClick(_ sender: UIButton) {
+    @IBAction private func loginButtonClick(_ sender: UIButton) {
         self.delegate?.loginClick(visitorView: self)
     }
 }

@@ -11,7 +11,7 @@ import SDWebImage
 
 class LFPictureCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView!
 
     var picM: LFPicture? {
         didSet {

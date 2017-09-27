@@ -12,7 +12,7 @@ class LFPopoverPresentationController: UIPresentationController {
     
     var presentedViewFrame = CGRect.zero
     
-    lazy var coverView: UIView = {
+    fileprivate lazy var coverView: UIView = {
         let coverV = UIView()
         coverV.backgroundColor = UIColor(white: 0, alpha: 0.2)
         return coverV
@@ -29,7 +29,7 @@ class LFPopoverPresentationController: UIPresentationController {
 
 //MARK: - UI
 extension LFPopoverPresentationController {
-    func setupCoverView() {
+    fileprivate func setupCoverView() {
         self.coverView.frame = self.containerView!.bounds
         self.containerView?.insertSubview(self.coverView, belowSubview: self.presentedView!)
         
@@ -40,7 +40,7 @@ extension LFPopoverPresentationController {
 
 //MARK: - 事件监听
 extension LFPopoverPresentationController {
-    func dismiss() {
+    @objc fileprivate func dismiss() {
         self.presentedViewController.dismiss(animated: true, completion: nil)
     }
 }

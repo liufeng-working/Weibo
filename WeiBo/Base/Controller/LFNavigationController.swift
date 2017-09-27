@@ -13,6 +13,6 @@ class LFNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.navigationBar.isTranslucent = true
     }
 }

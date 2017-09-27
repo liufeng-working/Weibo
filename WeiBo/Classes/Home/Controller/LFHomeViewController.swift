@@ -12,21 +12,31 @@ import MJRefresh
 
 class LFHomeViewController: LFBaseViewController {
     
-    lazy var statusMs = [LFStatusModel]()
+    fileprivate lazy var statusMs = [LFStatusModel]()
 
     //MARK: - titleView
-    lazy var titleView: LFTitleButton = {
+    fileprivate lazy var titleView: LFTitleButton = {
         let titleBtn = LFTitleButton()
         titleBtn.addTarget(self, action: #selector(titleViewClick), for: UIControlEvents.touchUpInside)
         return titleBtn
     }()
     
-    lazy var popoverAnimation: LFPopoverAnimation = {
+    fileprivate lazy var popoverAnimation: LFPopoverAnimation = {
         let popoverA = LFPopoverAnimation()
         popoverA.dismissCallback = {
             self.titleView.isSelected = !self.titleView.isSelected
         }
         return popoverA
+    }()
+    
+    fileprivate lazy var tipView: UILabel = {
+        let tip = UILabel(frame: CGRect(x: 0, y: 34, width: self.view.bounds.width, height: 30))
+        tip.backgroundColor = UIColor.orange
+        tip.textColor = UIColor.white
+        tip.font = UIFont.systemFont(ofSize: 14)
+        tip.textAlignment = NSTextAlignment.center
+        tip.isHidden = true
+        return tip
     }()
 
     //MARK: -
@@ -34,6 +44,10 @@ class LFHomeViewController: LFBaseViewController {
         super.viewDidLoad()
         
         self.setupRefreshView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.view.superview?.addSubview(self.tipView)
     }
 }
 
@@ -48,7 +62,7 @@ extension LFHomeViewController {
         self.navigationItem.titleView = self.titleView
     }
     
-    func setupRefreshView() {
+    fileprivate func setupRefreshView() {
         let refHeader = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadHomeData))
         refHeader?.setTitle("下拉刷新", for: MJRefreshState.idle)
         refHeader?.setTitle("释放立即刷新", for: MJRefreshState.willRefresh)
@@ -66,7 +80,7 @@ extension LFHomeViewController {
 
 //MARK: - 事件监听
 extension LFHomeViewController {
-    func titleViewClick(titleBtn: LFTitleButton) {
+    @objc fileprivate func titleViewClick(titleBtn: LFTitleButton) {
         titleBtn.isSelected = !titleBtn.isSelected
         
         let popoverVC = LFPopoverViewController()
@@ -74,18 +88,18 @@ extension LFHomeViewController {
         self.present(popoverVC, animated: true, completion: nil)
     }
     
-    func loadHomeData() {
+    @objc fileprivate func loadHomeData() {
         self.loadHomeTimeline(isNew: true)
     }
     
-    func loadMoreHomeData() {
+    @objc fileprivate func loadMoreHomeData() {
         self.loadHomeTimeline(isNew: false)
     }
 }
 
 //MARK: - 请求数据
 extension LFHomeViewController {
-    func loadHomeTimeline(isNew: Bool) {
+    fileprivate func loadHomeTimeline(isNew: Bool) {
         var since_id = 0
         var max_id = 0
         if isNew {
@@ -110,6 +124,7 @@ extension LFHomeViewController {
             
             //刷新表格
             group.notify(queue: DispatchQueue.main, execute: {
+                self.showTipView(count: statusMs.count)
                 if isNew {
                     self.statusMs.insert(contentsOf: statusMs, at: 0)
                     self.tableView.mj_header.endRefreshing()
@@ -120,7 +135,30 @@ extension LFHomeViewController {
                 self.tableView.reloadData()
             })
         }) { (error: Error) in
-            
+            if isNew {
+                self.tableView.mj_header.endRefreshing()
+            }else {
+                self.tableView.mj_footer.endRefreshing()
+            }
+        }
+    }
+}
+
+//MARK: - 其他方法
+extension LFHomeViewController {
+    
+    //展示新数据提示的view
+    fileprivate func showTipView(count: Int) {
+        self.tipView.isHidden = false
+        self.tipView.text = count == 0 ? "没有新数据" : "\(count)条新数据"
+        UIView.animate(withDuration: 1, animations: { 
+            self.tipView.frame.origin.y = 64
+        }) { (_) in
+            UIView.animate(withDuration: 1, delay: 1, options: [], animations: { 
+                self.tipView.frame.origin.y = 34
+            }, completion: { (_) in
+                self.tipView.isHidden = true
+            })
         }
     }
 }
