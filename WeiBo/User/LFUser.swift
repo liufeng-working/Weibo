@@ -103,7 +103,7 @@ class LFUser: NSObject, NSCoding {
     /// 认证类型 0:个人认证 2,3,5:企业认证 220:达人认证
     var verified_type: Int = -1 {
         didSet {
-            switch verified_type {
+            switch self.verified_type {
             case 0:
                 self.verified_image = UIImage(named: "avatar_vip")
             case 2, 3, 5:
@@ -220,7 +220,7 @@ extension LFUser {
         aCoder.encode(self.allow_all_act_msg, forKey: "allow_all_act_msg")
         aCoder.encode(self.geo_enabled, forKey: "geo_enabled")
         aCoder.encode(self.verified, forKey: "verified")
-        aCoder.encode(self.verified_type, forKey: "verified_type")
+        aCoder.encode(self.verified_image, forKey: "verified_image")
         aCoder.encode(self.remark, forKey: "remark")
         aCoder.encode(self.status, forKey: "status")
         aCoder.encode(self.allow_all_comment, forKey: "allow_all_comment")
@@ -257,7 +257,7 @@ extension LFUser {
         self.allow_all_act_msg = aDecoder.decodeObject(forKey: "allow_all_act_msg") as? Bool
         self.geo_enabled = aDecoder.decodeObject(forKey: "geo_enabled") as? Bool
         self.verified = aDecoder.decodeObject(forKey: "verified") as? Bool
-        self.verified_type = aDecoder.decodeObject(forKey: "verified_type") as! Int
+        self.verified_image = aDecoder.decodeObject(forKey: "verified_image") as? UIImage
         self.remark = aDecoder.decodeObject(forKey: "remark") as? String
         self.status = aDecoder.decodeObject(forKey: "status")
         self.allow_all_comment = aDecoder.decodeObject(forKey: "allow_all_comment") as? Bool

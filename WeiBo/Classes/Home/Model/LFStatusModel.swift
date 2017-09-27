@@ -12,20 +12,19 @@ import SDWebImage
 class LFStatusModel: NSObject {
 
     /// 微博创建时间
-    var created_at: String? {
-        didSet {
-            if let created_at = self.created_at {
-                self.created_at_str = Date.dateString(originString: created_at)
-            }
+    var created_at: String?
+    var created_at_str: String? {
+        if let created_at = self.created_at {
+            return Date.dateString(originString: created_at)
         }
+        return nil
     }
-    var created_at_str: String?
     
     /// 微博ID
-    var id: Int?
+    var id: Int = 0
     
     /// 微博MID
-    var mid: Int?
+    var mid: Int = 0
     
     /// 字符串型的微博ID
     var idstr: String?
