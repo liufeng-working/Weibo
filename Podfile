@@ -7,7 +7,6 @@ target 'WeiBo' do
   # Pods for WeiBo
   pod 'AFNetworking', '~> 3.1.0'
   pod 'SDWebImage', '~> 4.0.0'
-  pod 'SnapKit', '~> 3.2.0'
   pod 'SVProgressHUD', '~> 2.1.2'
   pod 'MJRefresh', '~> 3.1.12'
 end

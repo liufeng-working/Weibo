@@ -57,7 +57,6 @@ extension LFHomeViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(imageNamed: "navigationbar_friendattention", highlightedImageNamed: "navigationbar_friendattention_highlighted")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(imageNamed: "navigationbar_pop", highlightedImageNamed: "navigationbar_pop_highlighted")
-        
         self.titleView.setTitle(LFUserViewModel.shareUser.user?.screen_name, for: UIControlState.normal)
         self.navigationItem.titleView = self.titleView
     }

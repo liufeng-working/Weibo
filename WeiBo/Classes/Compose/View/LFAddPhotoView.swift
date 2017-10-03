@@ -13,12 +13,13 @@ class LFAddPhotoView: UICollectionView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.dataSource = self
-        self.delegate = self
+//        self.dataSource = self
+//        self.delegate = self
     }
 }
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension LFAddPhotoView: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-}
+//extension LFAddPhotoView: UICollectionViewDelegate, UICollectionViewDataSource {
+//
+//}
+
