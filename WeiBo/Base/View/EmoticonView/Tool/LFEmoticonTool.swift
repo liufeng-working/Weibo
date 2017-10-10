@@ -45,4 +45,50 @@ class LFEmoticonTool: NSObject {
         }
         return attMStr
     }
+    
+    public static func showEmoticonAtLable(label: UILabel) -> NSAttributedString? {
+        let pattern = "\\[.+?\\]"
+        
+        guard let text = label.text else {
+            return nil
+        }
+        guard let attributedText = label.attributedText else {
+            return nil
+        }
+        guard let resultDics = text.matchingWithPattern(pattern: pattern).handleResult else {
+            return nil
+        }
+        
+        let attMStr = NSMutableAttributedString(string: text)
+        for dict in resultDics.reversed() {
+            let chs = dict[LFMatchingNSStringKey] as! String
+            
+            guard let pngPath = self.findPngPath(chs: chs) else {
+                continue
+            }
+            
+            let attachment = NSTextAttachment()
+            attachment.image = UIImage(contentsOfFile: pngPath)
+            attachment.bounds = CGRect(x: 0, y: -4, width: label.font.lineHeight, height: label.font.lineHeight)
+            let rang = dict[LFMatchingNSRangKey] as! NSRange
+            let attStr = NSAttributedString(attachment: attachment)
+            attMStr.replaceCharacters(in: rang, with: attStr)
+        }
+        return attMStr
+    }
+}
+
+//MARK: - 私有方法
+extension LFEmoticonTool {
+    fileprivate static func findPngPath(chs: String) -> String? {
+        for package in LFEmoticonManager.shareManager.packages {
+            for emoticon in package.emoticons {
+                if emoticon.chs == chs {
+                    return emoticon.pngPath
+                }
+            }
+        }
+        
+        return nil
+    }
 }

@@ -28,6 +28,8 @@
 		032FCE8A1F8C928F0050292A /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 032FCE7E1F8C925D0050292A /* Emoticons.bundle */; };
 		032FCE8B1F8C92980050292A /* LFEmoticonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE801F8C925D0050292A /* LFEmoticonTool.swift */; };
 		032FCE8C1F8C929D0050292A /* LFEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE821F8C925D0050292A /* LFEmoticonCell.swift */; };
+		032FCE8E1F8CAF740050292A /* LFComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE8D1F8CAF740050292A /* LFComposeViewModel.swift */; };
+		032FCE901F8CB70E0050292A /* String+LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE8F1F8CB70E0050292A /* String+LFExtension.swift */; };
 		03534F951F79705100856E8E /* LFPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03534F941F79705100856E8E /* LFPicture.swift */; };
 		039700B31F79298F00B80CC6 /* Date+LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039700B21F79298F00B80CC6 /* Date+LFExtension.swift */; };
 		03A289C71F6AACBE004180FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A289C61F6AACBE004180FD /* Main.storyboard */; };
@@ -41,6 +43,7 @@
 		03A289E51F6AD158004180FD /* LFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A289E11F6AD158004180FD /* LFTabBarController.swift */; };
 		03A289E71F6AD173004180FD /* LFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A289E61F6AD173004180FD /* LFVisitorView.swift */; };
 		03A289E91F6AD17B004180FD /* LFVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A289E81F6AD17B004180FD /* LFVisitorView.xib */; };
+		03A42F3E1F8CCF32005D7D7B /* LFStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A42F3D1F8CCF32005D7D7B /* LFStatusLabel.swift */; };
 		03BF8F5B1F77902400C4701A /* LFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F5A1F77902400C4701A /* LFLog.swift */; };
 		03BF8F5E1F77933300C4701A /* LFBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F5D1F77933300C4701A /* LFBaseViewModel.swift */; };
 		03BF8F601F7796A100C4701A /* LFURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF8F5F1F7796A100C4701A /* LFURL.swift */; };
@@ -100,6 +103,8 @@
 		032FCE7E1F8C925D0050292A /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		032FCE801F8C925D0050292A /* LFEmoticonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFEmoticonTool.swift; sourceTree = "<group>"; };
 		032FCE821F8C925D0050292A /* LFEmoticonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFEmoticonCell.swift; sourceTree = "<group>"; };
+		032FCE8D1F8CAF740050292A /* LFComposeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFComposeViewModel.swift; sourceTree = "<group>"; };
+		032FCE8F1F8CB70E0050292A /* String+LFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LFExtension.swift"; sourceTree = "<group>"; };
 		03534F941F79705100856E8E /* LFPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPicture.swift; sourceTree = "<group>"; };
 		039700B21F79298F00B80CC6 /* Date+LFExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+LFExtension.swift"; sourceTree = "<group>"; };
 		03A289C61F6AACBE004180FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 		03A289E11F6AD158004180FD /* LFTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTabBarController.swift; sourceTree = "<group>"; };
 		03A289E61F6AD173004180FD /* LFVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFVisitorView.swift; sourceTree = "<group>"; };
 		03A289E81F6AD17B004180FD /* LFVisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFVisitorView.xib; sourceTree = "<group>"; };
+		03A42F3D1F8CCF32005D7D7B /* LFStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFStatusLabel.swift; sourceTree = "<group>"; };
 		03BF8F5A1F77902400C4701A /* LFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLog.swift; sourceTree = "<group>"; };
 		03BF8F5D1F77933300C4701A /* LFBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFBaseViewModel.swift; sourceTree = "<group>"; };
 		03BF8F5F1F7796A100C4701A /* LFURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFURL.swift; sourceTree = "<group>"; };
@@ -290,6 +296,7 @@
 				03A289E61F6AD173004180FD /* LFVisitorView.swift */,
 				03A289E81F6AD17B004180FD /* LFVisitorView.xib */,
 				0318D3B41F7BF10F00A7E8C9 /* LFTextView.swift */,
+				03A42F3D1F8CCF32005D7D7B /* LFStatusLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -421,6 +428,7 @@
 		03C1C8981F8B8BFA00FDF02D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				032FCE8D1F8CAF740050292A /* LFComposeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -431,6 +439,7 @@
 				03DE6A2F1F765B73009ED1A9 /* UIBarButtonItem + LFExtension.swift */,
 				03DE6A301F765B73009ED1A9 /* UIButton+LFExtension.swift */,
 				039700B21F79298F00B80CC6 /* Date+LFExtension.swift */,
+				032FCE8F1F8CB70E0050292A /* String+LFExtension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -876,6 +885,7 @@
 				03DE6A311F765B73009ED1A9 /* UIBarButtonItem + LFExtension.swift in Sources */,
 				032FCE8B1F8C92980050292A /* LFEmoticonTool.swift in Sources */,
 				03A289E71F6AD173004180FD /* LFVisitorView.swift in Sources */,
+				032FCE8E1F8CAF740050292A /* LFComposeViewModel.swift in Sources */,
 				03BF8F8F1F77FBC400C4701A /* LFViewController.swift in Sources */,
 				03A289E51F6AD158004180FD /* LFTabBarController.swift in Sources */,
 				03A289E41F6AD158004180FD /* LFNavigationController.swift in Sources */,
@@ -886,6 +896,7 @@
 				03DE6A441F7662FB009ED1A9 /* LFDiscoverViewController.swift in Sources */,
 				039700B31F79298F00B80CC6 /* Date+LFExtension.swift in Sources */,
 				032FCE841F8C927A0050292A /* LFEmoticon.swift in Sources */,
+				03A42F3E1F8CCF32005D7D7B /* LFStatusLabel.swift in Sources */,
 				03BF8F931F78056A00C4701A /* LFStatusModel.swift in Sources */,
 				03BF8F791F77E10600C4701A /* LFOAuthViewModel.swift in Sources */,
 				03534F951F79705100856E8E /* LFPicture.swift in Sources */,
@@ -897,6 +908,7 @@
 				03BF8F771F77E0DC00C4701A /* LFOAuth.swift in Sources */,
 				03DE6A4A1F766303009ED1A9 /* LFProfileViewController.swift in Sources */,
 				03DE6A381F7662EA009ED1A9 /* LFHomeViewController.swift in Sources */,
+				032FCE901F8CB70E0050292A /* String+LFExtension.swift in Sources */,
 				03DE6A4E1F766357009ED1A9 /* LFTitleButton.swift in Sources */,
 				03BF8F601F7796A100C4701A /* LFURL.swift in Sources */,
 				03BF8F951F7812EB00C4701A /* LFStatus.swift in Sources */,

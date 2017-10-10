@@ -64,7 +64,13 @@ extension LFComposeViewController {
     }
     
     @objc fileprivate func sendClick() {
-        self.textView.attributedText = LFEmoticonTool.getAttributeString(textView: self.textView)
+        let statusText = LFEmoticonTool.getAttributeString(textView: self.textView).string
+        self.textView.text = statusText
+//        LFComposeViewModel.sendStatus(statusText: statusText, success: { (isSuccess: Bool) in
+//
+//        }) { (error: Error) in
+//
+//        }
     }
     
     @IBAction fileprivate func emoticonClick() {

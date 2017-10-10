@@ -45,15 +45,19 @@ class LFStatusCell: UITableViewCell {
                 self.sourceL.text = statusM.source_str
                 self.textL.text = statusM.text
                 self.nameL.textColor = statusM.user?.mbrank == 0 ? UIColor.black : UIColor.orange
+                let attMStr = LFEmoticonTool.showEmoticonAtLable(label: self.textL)
+                self.textL.attributedText = attMStr
                 
                 self.retweetBtn.setTitle(statusM.reposts_str, for: UIControlState.normal)
-                commentBtn.setTitle(statusM.comments_str, for: UIControlState.normal)
-                unlikeBtn.setTitle(statusM.attitudes_str, for: UIControlState.normal)
+                self.commentBtn.setTitle(statusM.comments_str, for: UIControlState.normal)
+                self.unlikeBtn.setTitle(statusM.attitudes_str, for: UIControlState.normal)
                 
                 if statusM.hasRetweet {
                     self.retweetTextL.text = "@\(statusM.retweeted_status!.user!.screen_name!) :" + statusM.retweeted_status!.text!
                     self.retweetBgView.isHidden = false
                     self.retweetTextTopC.constant = 20
+                    let attMStr = LFEmoticonTool.showEmoticonAtLable(label: self.retweetTextL)
+                    self.retweetTextL.attributedText = attMStr
                 }else {
                     self.retweetTextL.text = nil
                     self.retweetBgView.isHidden = true

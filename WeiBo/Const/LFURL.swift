@@ -19,3 +19,6 @@ let weibo_userShow = "https://api.weibo.com/2/users/show.json"
 
 //MARK: - 获取当前登录用户及其所关注（授权）用户的最新微博
 let weibo_home_timeline = "https://api.weibo.com/2/statuses/home_timeline.json"
+
+//MARK: - 发送微博
+let weibo_send = "https://api.weibo.com/2/statuses/update.json"
