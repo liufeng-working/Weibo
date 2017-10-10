@@ -18,6 +18,16 @@
 		0318D3B31F7BEB6400A7E8C9 /* LFComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0318D3B21F7BEB6400A7E8C9 /* LFComposeViewController.xib */; };
 		0318D3B51F7BF10F00A7E8C9 /* LFTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3B41F7BF10F00A7E8C9 /* LFTextView.swift */; };
 		0318D3B71F7C1F9100A7E8C9 /* LFAddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3B61F7C1F9100A7E8C9 /* LFAddPhotoView.swift */; };
+		032FCE831F8C92750050292A /* LFEmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE751F8C925D0050292A /* LFEmoticonViewController.swift */; };
+		032FCE841F8C927A0050292A /* LFEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE771F8C925D0050292A /* LFEmoticon.swift */; };
+		032FCE851F8C927E0050292A /* LFEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE781F8C925D0050292A /* LFEmoticonManager.swift */; };
+		032FCE861F8C92820050292A /* LFEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE791F8C925D0050292A /* LFEmoticonPackage.swift */; };
+		032FCE871F8C92850050292A /* LFTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE7A1F8C925D0050292A /* LFTextAttachment.swift */; };
+		032FCE881F8C928A0050292A /* compose_emotion_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 032FCE7C1F8C925D0050292A /* compose_emotion_delete@2x.png */; };
+		032FCE891F8C928C0050292A /* compose_emotion_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 032FCE7D1F8C925D0050292A /* compose_emotion_delete@3x.png */; };
+		032FCE8A1F8C928F0050292A /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 032FCE7E1F8C925D0050292A /* Emoticons.bundle */; };
+		032FCE8B1F8C92980050292A /* LFEmoticonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE801F8C925D0050292A /* LFEmoticonTool.swift */; };
+		032FCE8C1F8C929D0050292A /* LFEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FCE821F8C925D0050292A /* LFEmoticonCell.swift */; };
 		03534F951F79705100856E8E /* LFPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03534F941F79705100856E8E /* LFPicture.swift */; };
 		039700B31F79298F00B80CC6 /* Date+LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039700B21F79298F00B80CC6 /* Date+LFExtension.swift */; };
 		03A289C71F6AACBE004180FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A289C61F6AACBE004180FD /* Main.storyboard */; };
@@ -80,6 +90,16 @@
 		0318D3B21F7BEB6400A7E8C9 /* LFComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFComposeViewController.xib; sourceTree = "<group>"; };
 		0318D3B41F7BF10F00A7E8C9 /* LFTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTextView.swift; sourceTree = "<group>"; };
 		0318D3B61F7C1F9100A7E8C9 /* LFAddPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFAddPhotoView.swift; sourceTree = "<group>"; };
+		032FCE751F8C925D0050292A /* LFEmoticonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFEmoticonViewController.swift; sourceTree = "<group>"; };
+		032FCE771F8C925D0050292A /* LFEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFEmoticon.swift; sourceTree = "<group>"; };
+		032FCE781F8C925D0050292A /* LFEmoticonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFEmoticonManager.swift; sourceTree = "<group>"; };
+		032FCE791F8C925D0050292A /* LFEmoticonPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFEmoticonPackage.swift; sourceTree = "<group>"; };
+		032FCE7A1F8C925D0050292A /* LFTextAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFTextAttachment.swift; sourceTree = "<group>"; };
+		032FCE7C1F8C925D0050292A /* compose_emotion_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@2x.png"; sourceTree = "<group>"; };
+		032FCE7D1F8C925D0050292A /* compose_emotion_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@3x.png"; sourceTree = "<group>"; };
+		032FCE7E1F8C925D0050292A /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		032FCE801F8C925D0050292A /* LFEmoticonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFEmoticonTool.swift; sourceTree = "<group>"; };
+		032FCE821F8C925D0050292A /* LFEmoticonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFEmoticonCell.swift; sourceTree = "<group>"; };
 		03534F941F79705100856E8E /* LFPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPicture.swift; sourceTree = "<group>"; };
 		039700B21F79298F00B80CC6 /* Date+LFExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+LFExtension.swift"; sourceTree = "<group>"; };
 		03A289C61F6AACBE004180FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -172,9 +192,9 @@
 			children = (
 				0318D3AE1F7BEAC800A7E8C9 /* Compose.storyboard */,
 				0318D3AA1F7BEAB300A7E8C9 /* Controller */,
-				0318D3AB1F7BEAB300A7E8C9 /* Model */,
+				03C1C8961F8B8BB900FDF02D /* Model */,
 				0318D3AC1F7BEAB300A7E8C9 /* View */,
-				0318D3AD1F7BEAB300A7E8C9 /* ViewModel */,
+				03C1C8981F8B8BFA00FDF02D /* ViewModel */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -188,13 +208,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0318D3AB1F7BEAB300A7E8C9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		0318D3AC1F7BEAB300A7E8C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,11 +216,61 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0318D3AD1F7BEAB300A7E8C9 /* ViewModel */ = {
+		032FCE731F8C925D0050292A /* EmoticonView */ = {
 			isa = PBXGroup;
 			children = (
+				032FCE741F8C925D0050292A /* Controller */,
+				032FCE761F8C925D0050292A /* Model */,
+				032FCE7B1F8C925D0050292A /* Source */,
+				032FCE7F1F8C925D0050292A /* Tool */,
+				032FCE811F8C925D0050292A /* View */,
 			);
-			path = ViewModel;
+			path = EmoticonView;
+			sourceTree = "<group>";
+		};
+		032FCE741F8C925D0050292A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				032FCE751F8C925D0050292A /* LFEmoticonViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		032FCE761F8C925D0050292A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				032FCE771F8C925D0050292A /* LFEmoticon.swift */,
+				032FCE781F8C925D0050292A /* LFEmoticonManager.swift */,
+				032FCE791F8C925D0050292A /* LFEmoticonPackage.swift */,
+				032FCE7A1F8C925D0050292A /* LFTextAttachment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		032FCE7B1F8C925D0050292A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				032FCE7C1F8C925D0050292A /* compose_emotion_delete@2x.png */,
+				032FCE7D1F8C925D0050292A /* compose_emotion_delete@3x.png */,
+				032FCE7E1F8C925D0050292A /* Emoticons.bundle */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		032FCE7F1F8C925D0050292A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				032FCE801F8C925D0050292A /* LFEmoticonTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		032FCE811F8C925D0050292A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				032FCE821F8C925D0050292A /* LFEmoticonCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		03A289DE1F6AD158004180FD /* Controller */ = {
@@ -223,6 +286,7 @@
 		03A289E21F6AD158004180FD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				032FCE731F8C925D0050292A /* EmoticonView */,
 				03A289E61F6AD173004180FD /* LFVisitorView.swift */,
 				03A289E81F6AD17B004180FD /* LFVisitorView.xib */,
 				0318D3B41F7BF10F00A7E8C9 /* LFTextView.swift */,
@@ -341,6 +405,20 @@
 			sourceTree = "<group>";
 		};
 		03BF8F831F77EC7F00C4701A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		03C1C8961F8B8BB900FDF02D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03C1C8981F8B8BFA00FDF02D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -690,12 +768,14 @@
 			files = (
 				030F53341F768AC200D7AE4D /* LFPopoverViewController.xib in Resources */,
 				03BF8F6C1F77B4B900C4701A /* MainVCSettings.json in Resources */,
+				032FCE881F8C928A0050292A /* compose_emotion_delete@2x.png in Resources */,
 				03BF8F891F77ECF800C4701A /* LFWelcomeViewController.xib in Resources */,
 				03A289C71F6AACBE004180FD /* Main.storyboard in Resources */,
 				03A289D01F6ABC29004180FD /* Home.storyboard in Resources */,
 				03A289D61F6ABC9D004180FD /* Profile.storyboard in Resources */,
 				03EF8B681F7A8FD200DFB5A0 /* LFPictureCell.xib in Resources */,
 				03F2A5CD1F6976E100CA7E63 /* LaunchScreen.storyboard in Resources */,
+				032FCE8A1F8C928F0050292A /* Emoticons.bundle in Resources */,
 				03BF8F991F78176300C4701A /* LFStatusCell.xib in Resources */,
 				03A289D81F6ABEC1004180FD /* Null.storyboard in Resources */,
 				03A289D21F6ABC70004180FD /* Message.storyboard in Resources */,
@@ -703,6 +783,7 @@
 				03A289D41F6ABC88004180FD /* Discover.storyboard in Resources */,
 				03F2A5CA1F6976E100CA7E63 /* Assets.xcassets in Resources */,
 				03A289E91F6AD17B004180FD /* LFVisitorView.xib in Resources */,
+				032FCE891F8C928C0050292A /* compose_emotion_delete@3x.png in Resources */,
 				0318D3B31F7BEB6400A7E8C9 /* LFComposeViewController.xib in Resources */,
 				0318D3AF1F7BEAC800A7E8C9 /* Compose.storyboard in Resources */,
 			);
@@ -784,12 +865,16 @@
 				03EF8B6A1F7AD0C600DFB5A0 /* LFFit.swift in Sources */,
 				03A289E31F6AD158004180FD /* LFBaseViewController.swift in Sources */,
 				03BF8F7B1F77E18100C4701A /* LFOAuthViewController.swift in Sources */,
+				032FCE871F8C92850050292A /* LFTextAttachment.swift in Sources */,
+				032FCE861F8C92820050292A /* LFEmoticonPackage.swift in Sources */,
 				030F53381F769FCB00D7AE4D /* LFPopoverAnimation.swift in Sources */,
 				03BF8F5E1F77933300C4701A /* LFBaseViewModel.swift in Sources */,
 				030F53621F76DD0C00D7AE4D /* LFPublic.swift in Sources */,
 				03DE6A321F765B73009ED1A9 /* UIButton+LFExtension.swift in Sources */,
 				03BF8F911F78014B00C4701A /* LFHomeViewModel.swift in Sources */,
+				032FCE831F8C92750050292A /* LFEmoticonViewController.swift in Sources */,
 				03DE6A311F765B73009ED1A9 /* UIBarButtonItem + LFExtension.swift in Sources */,
+				032FCE8B1F8C92980050292A /* LFEmoticonTool.swift in Sources */,
 				03A289E71F6AD173004180FD /* LFVisitorView.swift in Sources */,
 				03BF8F8F1F77FBC400C4701A /* LFViewController.swift in Sources */,
 				03A289E51F6AD158004180FD /* LFTabBarController.swift in Sources */,
@@ -800,12 +885,14 @@
 				0318D3B51F7BF10F00A7E8C9 /* LFTextView.swift in Sources */,
 				03DE6A441F7662FB009ED1A9 /* LFDiscoverViewController.swift in Sources */,
 				039700B31F79298F00B80CC6 /* Date+LFExtension.swift in Sources */,
+				032FCE841F8C927A0050292A /* LFEmoticon.swift in Sources */,
 				03BF8F931F78056A00C4701A /* LFStatusModel.swift in Sources */,
 				03BF8F791F77E10600C4701A /* LFOAuthViewModel.swift in Sources */,
 				03534F951F79705100856E8E /* LFPicture.swift in Sources */,
 				030F53331F768AC200D7AE4D /* LFPopoverViewController.swift in Sources */,
 				030F535B1F76D04B00D7AE4D /* LFHTTPManager.swift in Sources */,
 				03DE6A3E1F7662F3009ED1A9 /* LFMessageViewController.swift in Sources */,
+				032FCE851F8C927E0050292A /* LFEmoticonManager.swift in Sources */,
 				03BF8F8B1F77F16400C4701A /* LFUserViewModel.swift in Sources */,
 				03BF8F771F77E0DC00C4701A /* LFOAuth.swift in Sources */,
 				03DE6A4A1F766303009ED1A9 /* LFProfileViewController.swift in Sources */,
@@ -816,6 +903,7 @@
 				03EF8B671F7A8FD200DFB5A0 /* LFPictureCell.swift in Sources */,
 				0318D3B11F7BEAE200A7E8C9 /* LFComposeViewController.swift in Sources */,
 				03EF8B641F7A8E3900DFB5A0 /* LFPictureView.swift in Sources */,
+				032FCE8C1F8C929D0050292A /* LFEmoticonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

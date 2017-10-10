@@ -13,6 +13,9 @@ class LFComposeViewController: UIViewController {
     @IBOutlet fileprivate weak var textView: LFTextView!
     @IBOutlet fileprivate weak var toolViewBottomC: NSLayoutConstraint!
     @IBOutlet weak var picPickerViewHeightC: NSLayoutConstraint!
+    fileprivate lazy var emoticonVC: LFEmoticonViewController = LFEmoticonViewController { [weak self] (emoticon: LFEmoticon) in
+        LFEmoticonTool.insertEmoticonIntoTextView(textView: self!.textView, emoticon: emoticon)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class LFComposeViewController: UIViewController {
         self.setupNavigationBar()
     
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(noti:)), name: NSNotification.Name(rawValue: LFTextViewDidChangeNotification), object: nil)
     }
 }
 
@@ -55,20 +59,24 @@ extension LFComposeViewController {
 
 //MARK: - 事件监听
 extension LFComposeViewController {
-    func closeClick() {
+    @objc fileprivate func closeClick() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func sendClick() {
-        
+    @objc fileprivate func sendClick() {
+        self.textView.attributedText = LFEmoticonTool.getAttributeString(textView: self.textView)
     }
     
-    
+    @IBAction fileprivate func emoticonClick() {
+        self.textView.resignFirstResponder()
+        self.textView.inputView = self.textView.inputView != nil ? nil : self.emoticonVC.view
+        self.textView.becomeFirstResponder()
+     }
 }
 
 //MARK: - UITextViewDelegate
 extension LFComposeViewController: UITextViewDelegate {
-    func textViewDidChange(_ textView: UITextView) {
-        self.navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
+    func textDidChange(noti: NSNotification) {
+        self.navigationItem.rightBarButtonItem?.isEnabled = noti.object as! Bool
     }
 }

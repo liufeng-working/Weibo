@@ -56,8 +56,8 @@ extension LFHomeViewController {
     override func setupNavigationBarCustom() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(imageNamed: "navigationbar_friendattention", highlightedImageNamed: "navigationbar_friendattention_highlighted")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(imageNamed: "navigationbar_pop", highlightedImageNamed: "navigationbar_pop_highlighted")
-        self.titleView.setTitle(LFUserViewModel.shareUser.user?.screen_name, for: UIControlState.normal)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(imageNamed: "navigationbar_pop", highlightedImageNamed: "navigationbar_pop_highlighted", target: self, action: #selector(QRCodeClick))
+    self.titleView.setTitle(LFUserViewModel.shareUser.user?.screen_name, for: UIControlState.normal)
         self.navigationItem.titleView = self.titleView
     }
     
@@ -85,6 +85,10 @@ extension LFHomeViewController {
         let popoverVC = LFPopoverViewController()
         popoverVC.transitioningDelegate = self.popoverAnimation
         self.present(popoverVC, animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func QRCodeClick() {
+        
     }
     
     @objc fileprivate func loadHomeData() {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+public let LFTextViewDidChangeNotification = "LFTextViewDidChangeNotification"
 class LFTextView: UITextView {
 
     var placeholder: String? {
@@ -21,6 +22,12 @@ class LFTextView: UITextView {
     override var font: UIFont? {
         didSet {
             self.phLabel.font = font
+        }
+    }
+    
+    override var attributedText: NSAttributedString! {
+        didSet {
+            self.textDidChange()
         }
     }
     
@@ -73,6 +80,8 @@ extension LFTextView {
 //MARK: - 监听事件
 extension LFTextView {
     @objc fileprivate func textDidChange() {
-        self.phLabel.isHidden = self.hasText
+        let hidden = self.hasText || self.attributedText.length != 0
+        self.phLabel.isHidden = hidden
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LFTextViewDidChangeNotification), object: hidden)
     }
 }
