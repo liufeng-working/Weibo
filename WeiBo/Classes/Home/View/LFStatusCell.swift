@@ -19,8 +19,8 @@ class LFStatusCell: UITableViewCell {
     @IBOutlet private weak var vipView: UIImageView!
     @IBOutlet private weak var timeL: UILabel!
     @IBOutlet private weak var sourceL: UILabel!
-    @IBOutlet private weak var textL: UILabel!
-    @IBOutlet weak var retweetTextL: UILabel!
+    @IBOutlet private weak var textL: LFStatusLabel!
+    @IBOutlet weak var retweetTextL: LFStatusLabel!
     @IBOutlet weak var retweetBgView: UIView!
     
     @IBOutlet weak var picView: LFPictureView!
