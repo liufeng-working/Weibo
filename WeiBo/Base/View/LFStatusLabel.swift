@@ -16,7 +16,7 @@ enum LFTapHandlerType : Int {
 }
 
 class LFStatusLabel: UILabel {
-
+    
     //MARK: - 重写属性
     override var text: String? {
         didSet {
@@ -42,7 +42,7 @@ class LFStatusLabel: UILabel {
         }
     }
     
-    var matchTextColor: UIColor = UIColor(red: 87 / 255.0, green: 196 / 255.0, blue: 251 / 255.0, alpha: 1.0) {
+    var matchTextColor: UIColor = UIColor(red: 87/255.0, green: 196/255.0, blue: 251/255.0, alpha: 1.0) {
         didSet {
             self.prepareText()
         }
@@ -54,23 +54,23 @@ class LFStatusLabel: UILabel {
     fileprivate lazy var textContainer: NSTextContainer = NSTextContainer() // 容器,需要设置容器的大小
     
     // 用于记录下标值
-    fileprivate lazy var linkRanges: [NSRange] = [NSRange]()
     fileprivate lazy var userRanges: [NSRange] = [NSRange]()
     fileprivate lazy var topicRanges: [NSRange] = [NSRange]()
+    fileprivate lazy var linkRanges: [NSRange] = [NSRange]()
     
     // 用于记录用户选中的range
     fileprivate var selectedRange: NSRange?
     
-    // 用户记录点击还是松开
+    // 用于记录点击还是松开
     fileprivate var isSelected: Bool = false
     
     // 闭包属性,用于回调
     fileprivate var tapHandlerType: LFTapHandlerType = LFTapHandlerType.none
     
     typealias LFTapHandler = (LFStatusLabel, String, NSRange) -> Void
-    var linkTapHandler: LFTapHandler?
-    var topicTapHandler: LFTapHandler?
     var userTapHandler: LFTapHandler?
+    var topicTapHandler: LFTapHandler?
+    var linkTapHandler: LFTapHandler?
     
     // MARK:- 构造函数
     override init(frame: CGRect) {
@@ -90,7 +90,7 @@ class LFStatusLabel: UILabel {
         super.layoutSubviews()
         
         // 设置容器的大小为Label的尺寸
-        self.textContainer.size = frame.size
+        self.textContainer.size = self.frame.size
     }
     
     // MARK:- 重写drawTextInRect方法
@@ -101,10 +101,10 @@ class LFStatusLabel: UILabel {
             let selectedColor = self.isSelected ? UIColor(white: 0.7, alpha: 0.2) : UIColor.clear
             
             // 2.1.设置颜色
-            self.textStorage.addAttribute(NSBackgroundColorAttributeName, value: selectedColor, range: self.selectedRange!)
+           self.textStorage.addAttribute(NSBackgroundColorAttributeName, value: selectedColor, range: self.selectedRange!)
             
             // 2.2.绘制背景
-            self.layoutManager.drawBackground(forGlyphRange: self.selectedRange!, at: CGPoint(x: 0, y: 0))
+            self.layoutManager.drawBackground(forGlyphRange: self.selectedRange!, at: CGPoint.zero)
         }
         
         // 2.绘制字形
@@ -140,9 +140,9 @@ extension LFStatusLabel {
         var attrString : NSAttributedString?
         if self.attributedText != nil {
             attrString = self.attributedText
-        } else if self.text != nil {
+        }else if self.text != nil {
             attrString = NSAttributedString(string: self.text!)
-        } else {
+        }else {
             attrString = NSAttributedString(string: "")
         }
         
@@ -157,7 +157,7 @@ extension LFStatusLabel {
         self.textStorage.setAttributedString(attrStringM)
         
         // 4.匹配URL
-        if let linkRanges = self.getLinkRanges() {
+        if let linkRanges = self.getRanges(pattern: "((http[s]?|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)|(www.[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)") {
             self.linkRanges = linkRanges
             for range in linkRanges {
                 self.textStorage.addAttribute(NSForegroundColorAttributeName, value: self.matchTextColor, range: range)
@@ -165,16 +165,15 @@ extension LFStatusLabel {
         }
         
         // 5.匹配@用户
-        if let userRanges = self.getRanges(pattern: "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*") {
+        if let userRanges = self.getRanges(pattern: "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]+") {
             self.userRanges = userRanges
             for range in userRanges {
                 textStorage.addAttribute(NSForegroundColorAttributeName, value: self.matchTextColor, range: range)
             }
         }
         
-        
         // 6.匹配话题##
-        if let topicRanges = self.getRanges(pattern: "#.*?#") {
+        if let topicRanges = self.getRanges(pattern: "#.+?#") {
             self.topicRanges = topicRanges
             for range in topicRanges {
                 self.textStorage.addAttribute(NSForegroundColorAttributeName, value: self.matchTextColor, range: range)
@@ -194,15 +193,6 @@ extension LFStatusLabel {
         }
         
         return self.getRangesFromResult(regex: regex)
-    }
-    
-    fileprivate func getLinkRanges() -> [NSRange]? {
-        // 创建正则表达式
-        guard let detector = try? NSDataDetector(types: NSTextCheckingAllTypes) else {
-            return nil
-        }
-        
-        return self.getRangesFromResult(regex: detector)
     }
     
     fileprivate func getRangesFromResult(regex : NSRegularExpression) -> [NSRange] {
@@ -246,7 +236,7 @@ extension LFStatusLabel {
         self.isSelected = false
         
         // 2.重新绘制
-        setNeedsDisplay()
+        self.setNeedsDisplay()
         
         // 3.取出内容
         let contentText = (self.textStorage.string as NSString).substring(with: self.selectedRange!)
@@ -283,7 +273,7 @@ extension LFStatusLabel {
         // 2.1.判断是否是一个链接
         for linkRange in self.linkRanges {
             if index > linkRange.location && index < linkRange.location + linkRange.length {
-                setNeedsDisplay()
+                self.setNeedsDisplay()
                 self.tapHandlerType = LFTapHandlerType.link
                 return linkRange
             }

@@ -339,7 +339,6 @@
 			children = (
 				03BF8F6E1F77E0DC00C4701A /* Controller */,
 				03BF8F711F77E0DC00C4701A /* Model */,
-				03BF8F731F77E0DC00C4701A /* View */,
 				03BF8F741F77E0DC00C4701A /* ViewModel */,
 			);
 			path = OAuth;
@@ -362,13 +361,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		03BF8F731F77E0DC00C4701A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		03BF8F741F77E0DC00C4701A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,9 +373,6 @@
 			isa = PBXGroup;
 			children = (
 				03BF8F801F77EC7F00C4701A /* Controller */,
-				03BF8F811F77EC7F00C4701A /* Model */,
-				03BF8F821F77EC7F00C4701A /* View */,
-				03BF8F831F77EC7F00C4701A /* ViewModel */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -395,27 +384,6 @@
 				03BF8F881F77ECF800C4701A /* LFWelcomeViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		03BF8F811F77EC7F00C4701A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		03BF8F821F77EC7F00C4701A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		03BF8F831F77EC7F00C4701A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		03C1C8961F8B8BB900FDF02D /* Model */ = {
@@ -494,27 +462,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		03DE6A3B1F7662F3009ED1A9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		03DE6A3C1F7662F3009ED1A9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		03DE6A3D1F7662F3009ED1A9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		03DE6A3F1F7662FB009ED1A9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,54 +470,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		03DE6A411F7662FB009ED1A9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		03DE6A421F7662FB009ED1A9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		03DE6A431F7662FB009ED1A9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		03DE6A451F766303009ED1A9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				03DE6A461F766303009ED1A9 /* LFProfileViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		03DE6A471F766303009ED1A9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		03DE6A481F766303009ED1A9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		03DE6A491F766303009ED1A9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		03F2A5B61F6976E100CA7E63 = {
@@ -630,9 +535,6 @@
 			children = (
 				03A289D31F6ABC88004180FD /* Discover.storyboard */,
 				03DE6A3F1F7662FB009ED1A9 /* Controller */,
-				03DE6A411F7662FB009ED1A9 /* Model */,
-				03DE6A421F7662FB009ED1A9 /* View */,
-				03DE6A431F7662FB009ED1A9 /* ViewModel */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -654,9 +556,6 @@
 			children = (
 				03A289D11F6ABC70004180FD /* Message.storyboard */,
 				03DE6A391F7662F3009ED1A9 /* Controller */,
-				03DE6A3B1F7662F3009ED1A9 /* Model */,
-				03DE6A3C1F7662F3009ED1A9 /* View */,
-				03DE6A3D1F7662F3009ED1A9 /* ViewModel */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -666,9 +565,6 @@
 			children = (
 				03A289D51F6ABC9D004180FD /* Profile.storyboard */,
 				03DE6A451F766303009ED1A9 /* Controller */,
-				03DE6A471F766303009ED1A9 /* Model */,
-				03DE6A481F766303009ED1A9 /* View */,
-				03DE6A491F766303009ED1A9 /* ViewModel */,
 			);
 			path = Profile;
 			sourceTree = "<group>";

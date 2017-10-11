@@ -23,7 +23,7 @@ class LFComposeViewController: UIViewController {
         self.setupNavigationBar()
     
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(noti:)), name: NSNotification.Name(rawValue: LFTextViewDidChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(noti:)), name: NSNotification.Name.LFTextViewDidChangeNotification, object: nil)
     }
 }
 

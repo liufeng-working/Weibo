@@ -8,7 +8,6 @@
 
 import UIKit
 
-public let LFTextViewDidChangeNotification = "LFTextViewDidChangeNotification"
 class LFTextView: UITextView {
 
     var placeholder: String? {
@@ -82,6 +81,11 @@ extension LFTextView {
     @objc fileprivate func textDidChange() {
         let hidden = self.hasText || self.attributedText.length != 0
         self.phLabel.isHidden = hidden
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LFTextViewDidChangeNotification), object: hidden)
+        NotificationCenter.default.post(name: NSNotification.Name.LFTextViewDidChangeNotification, object: hidden)
     }
+}
+
+extension NSNotification.Name {
+    
+    static let LFTextViewDidChangeNotification: NSNotification.Name = NSNotification.Name(rawValue: "LFTextViewDidChangeNotification")
 }
