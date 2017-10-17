@@ -15,7 +15,7 @@ let weibo_oauth_redirectUrl = "http://www.kaituo.com.cn"
 
 //填充的用户账号密码
 let weibo_userName = "1483682940@qq.com"
-let weibo_password = "A123"
+let weibo_password = ""
 
 //用户信息保存在本地的用户名
 let lf_weibo_oauthPath = "lf_weibo_oauth.plist"
